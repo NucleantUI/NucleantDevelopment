@@ -1,0 +1,299 @@
+//
+//  Logging.swift
+//  OpenSwiftUICore
+//
+//  Audited for 6.0.87
+//  Status: Complete
+
+import Foundation
+#if OPENSWIFTUI_LINK_TESTING
+public import Testing
+#endif
+
+#if OPENSWIFTUI_SWIFT_LOG
+public import Logging
+extension Logger {
+    package init(subsystem: String, category: String) {
+        var logger = Logger(label: subsystem)
+        logger[metadataKey: "category"] = MetadataValue.string(category)
+        self = logger
+    }
+}
+
+extension Logger.Level {
+    #if DEBUG
+    public static let `default`: Logger.Level = .debug
+    #else
+    public static let `default`: Logger.Level = .info
+    #endif
+}
+
+extension Logger {
+    @inlinable
+    public func log(
+        _ message: @autoclosure () -> Logger.Message,
+        metadata: @autoclosure () -> Logger.Metadata? = nil,
+        file: String = #fileID,
+        function: String = #function,
+        line: UInt = #line
+    ) {
+        self.log(
+            level: .default,
+            message(),
+            metadata: metadata(),
+            source: nil,
+            file: file,
+            function: function,
+            line: line
+        )
+    }
+}
+#else
+public import os.log
+
+#if DEBUG
+@usableFromInline
+package let dso = { () -> UnsafeMutableRawPointer in
+    let count = _dyld_image_count()
+    for i in 0 ..< count {
+        if let name = _dyld_get_image_name(i) {
+            let swiftString = String(cString: name)
+            if swiftString.hasSuffix("/SwiftUI") {
+                if let header = _dyld_get_image_header(i) {
+                    return UnsafeMutableRawPointer(mutating: UnsafeRawPointer(header))
+                }
+            }
+        }
+    }
+    return UnsafeMutableRawPointer(mutating: #dsohandle)
+}()
+#endif
+
+#endif
+
+@usableFromInline
+package enum Log {
+    package static let subsystem: String = "org.OpenSwiftUIProject.OpenSwiftUI"
+    
+    @inline(__always)
+    package static func log(_ message: @autoclosure () -> String, unless condition: @autoclosure () -> Bool, file: StaticString, line: UInt) {
+        guard !condition() else { return }
+        #if DEBUG
+        #if OPENSWIFTUI_SWIFT_LOG
+        internalErrorsLog.debug("\(message()) \(file) \(line)")
+        #else
+        os_log(.default, log: internalErrorsLog, "%s %s: %s", message(), file.description, line.description)
+        #endif
+        #endif
+    }
+    
+    @inline(__always)
+    package static func log(_ message: @autoclosure () -> String, unless condition: @autoclosure () -> Bool, file: StaticString = #fileID) {
+        log(message(), unless: condition(), file: file, line: #line)
+    }
+    
+    @inline(__always)
+    package static func log(_ message: @autoclosure () -> String, unless condition: @autoclosure () -> Bool) {
+        log(message(), unless: condition(), file: #fileID)
+    }
+    
+    @inline(__always)
+    package static func log(_ message: @autoclosure () -> String) {
+        log(message(), unless: false)
+    }
+
+    package static func internalWarning(_ message: @autoclosure () -> String, file: StaticString, line: UInt) {
+        print("\(message()) - \(file): - please file a bug report")
+    }
+    
+    package static func internalWarning(_ message: @autoclosure () -> String) {
+        internalWarning(message(), file: #fileID, line: #line)
+    }
+    
+    package static func internalError(_ message: @autoclosure () -> String, file: StaticString = #fileID, line: UInt = #line) {
+        #if OPENSWIFTUI_SWIFT_LOG
+        internalErrorsLog.log(level: .error, "\(message()) - \(file): - please file a bug report")
+        #else
+        os_log(.fault, log: internalErrorsLog, "%s %s: %s", message(), file.description, line.description)
+        #endif
+        print("\(message()) - \(file): - please file a bug report")
+    }
+    
+    package static func internalError(_ message: @autoclosure () -> String) {
+        internalError(message(), file: #fileID, line: #line)
+    }
+
+    @inline(__always)
+    package static func internalError(_ message: StaticString, _ args: any CVarArg...) {
+        #if OPENSWIFTUI_SWIFT_LOG
+        internalErrorsLog.log(level: .error, "\(String(format: message.description, arguments: args))")
+        #else
+        os_log(.fault, log: internalErrorsLog, message, args)
+        #endif
+    }
+
+    package static func externalWarning(_ message: String) {
+        #if OPENSWIFTUI_SWIFT_LOG
+        unlocatedIssuesLog.log(level: .critical, "\(message)")
+        #else
+        unlocatedIssuesLog.fault("\(message)")
+        #endif
+    }
+
+    package static func eventDebug(_ message: String) {
+        #if !OPENSWIFTUI_SWIFT_LOG
+        os_log(log: eventDebuggingLog, "\(message)")
+        #endif
+    }
+    
+    #if OPENSWIFTUI_SWIFT_LOG
+    @usableFromInline
+    package static var runtimeIssuesLog = Logger(subsystem: "com.apple.runtime-issues", category: "OpenSwiftUI")
+    
+    @_transparent
+    @usableFromInline
+    package static func runtimeIssues(
+        _ message: @autoclosure () -> StaticString,
+        _ args: @autoclosure () -> [CVarArg] = []
+    ) {
+        runtimeIssuesLog.log(level: .critical, "\(message())")
+    }
+    #else
+    @usableFromInline
+    package static var runtimeIssuesLog: OSLog = OSLog(subsystem: "com.apple.runtime-issues", category: "OpenSwiftUI")
+    
+    @_transparent
+    @usableFromInline
+    package static func runtimeIssues(
+        _ message: @autoclosure () -> StaticString,
+        _ args: @autoclosure () -> [CVarArg] = []
+    ) {
+        #if OPENSWIFTUI_LINK_TESTING
+        if Test.current != nil {
+            let comment: Comment = #"[Runtime Issue]: message - "\#(message().description)" args: \#(args())"#
+            #if swift(>=6.3)
+            Issue.record(comment, severity: .warning)
+            #else
+            // TODO: Wait for Swift 6.2 Issue handler
+            // Issue.record(comment)
+            #endif
+        }
+        #endif
+
+        #if DEBUG
+        unsafeBitCast(
+            os_log as (OSLogType, UnsafeRawPointer, OSLog, StaticString, CVarArg...) -> Void,
+            to: ((OSLogType, UnsafeRawPointer, OSLog, StaticString, [CVarArg]) -> Void).self
+        )(.fault, dso, runtimeIssuesLog, message(), args())
+        #else
+        unsafeBitCast(
+            os_log as (OSLogType, UnsafeRawPointer, OSLog, StaticString, CVarArg...) -> Void,
+            to: ((OSLogType, UnsafeRawPointer, OSLog, StaticString, [CVarArg]) -> Void).self
+        )(.fault, #dsohandle, runtimeIssuesLog, message(), args())
+        #endif
+    }
+    
+    #endif
+    package static let propertyChangeLog: Logger = Logger(subsystem: subsystem, category: "Changed Body Properties")
+    package static var unlocatedIssuesLog: Logger = Logger(subsystem: subsystem, category: "Invalid Configuration")
+
+    #if OPENSWIFTUI_SWIFT_LOG
+    @usableFromInline
+    package static var internalErrorsLog: Logger = Logger(subsystem: subsystem, category: "OpenSwiftUI")
+    #else
+    @usableFromInline
+    package static var internalErrorsLog: OSLog = OSLog(subsystem: subsystem, category: "OpenSwiftUI")
+
+    @usableFromInline
+    package static var eventDebuggingLog: OSLog = OSLog(subsystem: "com.apple.diagnostics.events", category: "OpenSwiftUI")
+    #endif
+    
+    package static let archiving: Logger = Logger(subsystem: subsystem, category: "Archiving")
+    package static let archivedToggle: Logger = Logger(subsystem: subsystem, category: "ArchivedToggle")
+    package static let archivedButton: Logger = Logger(subsystem: subsystem, category: "ArchivedButton")
+    package static let archivedPlaybackButton: Logger = Logger(subsystem: subsystem, category: "ArchivedPlaybackButton")
+    package static let metadataExtraction: Logger = Logger(subsystem: subsystem, category: "MetadataExtraction")
+
+    // Added in 6.4.41
+    package static let unitTests: Logger = Logger(subsystem: subsystem, category: "UnitTests")
+
+    // Added in 6.4.41
+    package static let timelineScheduleSequences: Logger = Logger(subsystem: subsystem, category: "TimelineSchedule Sequences")
+}
+
+@available(*, unavailable)
+extension Log: Sendable {}
+
+@_transparent
+package func precondition(_ condition: @autoclosure () -> Bool, _ message: @autoclosure () -> String, file: StaticString = #fileID, line: UInt = #line) {
+    guard condition() else {
+        preconditionFailure(message(), file: file, line: line)
+    }
+}
+
+@_transparent
+package func preconditionFailure(_ message: @autoclosure () -> String, file: StaticString, line: UInt) -> Never {
+    #if DEBUG && OPENSWIFTUI_DEVELOPMENT
+    if message() == "TODO" {
+        print("💣 Hit unimplemented part of OpenSwiftUI at \(file):\(line).\nConsider adding a plain implementation to avoid crash.")
+    }
+    #endif
+    Swift.fatalError(message(), file: file, line: line)
+}
+
+@_transparent
+package func preconditionFailure(_ message: @autoclosure () -> String) -> Never {
+    preconditionFailure(message(), file: #fileID, line: #line)
+}
+
+#if !OPENSWIFTUI_SWIFT_LOG
+extension os.OSLog {
+    @usableFromInline
+    static var runtimeIssuesLog: os.OSLog = OSLog(subsystem: "com.apple.runtime-issues", category: "OpenSwiftUI")
+}
+#endif
+
+// MARK: - OpenSwiftUI addition: abstract and stub call
+
+@_transparent
+package func _openSwiftUIUnreachableCode(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) -> Never {
+    preconditionFailure("", file: file, line: line)
+}
+
+@_transparent
+package func _openSwiftUIBaseClassAbstractMethod(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) -> Never {
+    preconditionFailure("", file: file, line: line)
+}
+
+@_transparent
+package func _openSwiftUIEmptyStub(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) {
+    // Intentionally empty - stub implementation
+}
+
+// MARK: - OpenSwiftUI addition: dev addition Log API
+
+@_transparent
+package func _openSwiftUIUnimplementedFailure(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) -> Never {
+    preconditionFailure("Unimplemented yet", file: file, line: line)
+}
+
+@_transparent
+package func _openSwiftUIPlatformUnimplementedFailure(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) -> Never {
+    preconditionFailure("Unimplemented for this platform yet", file: file, line: line)
+}
+
+@_transparent
+package func _openSwiftUIUnimplementedWarning(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) {
+    print("\(file):\(line): Warning: \(function) is unimplemented")
+    #if DEBUG && OPENSWIFTUI_DEVELOPMENT
+    _openSwiftUIUnimplementedFailure(function, file: file, line: line)
+    #endif
+}
+
+@_transparent
+package func _openSwiftUIPlatformUnimplementedWarning(_ function: String = #function, file: StaticString = #fileID, line: UInt = #line) {
+    print("\(file):\(line): Warning: \(function) is unimplemented on this platform")
+    #if DEBUG && OPENSWIFTUI_DEVELOPMENT
+    _openSwiftUIPlatformUnimplementedFailure(function, file: file, line: line)
+    #endif
+}

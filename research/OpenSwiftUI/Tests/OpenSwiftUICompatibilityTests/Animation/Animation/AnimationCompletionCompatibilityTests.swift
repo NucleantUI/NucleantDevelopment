@@ -1,0 +1,63 @@
+//
+//  AnimationCompletionCompatibilityTests.swift
+//  OpenSwiftUICompatibilityTests
+
+import Testing
+import OpenSwiftUITestsSupport
+
+@MainActor
+struct AnimationCompletionCompatibilityTests {
+    @Test
+    func logicalAndRemovedComplete() async throws {
+        @MainActor
+        enum Helper {
+            static var values: [Int] = []
+        }
+
+        struct ContentView: View {
+            let confirmation: Confirmation
+            var continuation: UnsafeContinuation<Void, Never>
+
+            @State private var showRed = false
+            @State private var scale = 1.0
+
+            var body: some View {
+                Color(platformColor: showRed ? .red : .blue)
+                    .frame(width: 100 * scale, height: 100 * scale)
+                    .onAppear {
+                        let animation = Animation.linear(duration: 5)
+                            .logicallyComplete(after: 1)
+                        withAnimation(animation, completionCriteria: .logicallyComplete) {
+                            showRed.toggle()
+                        } completion: {
+                            Helper.values.append(1)
+                            confirmation()
+                            if Helper.values.count == 2 {
+                                continuation.resume()
+                            }
+                        }
+                        withAnimation(animation, completionCriteria: .removed) {
+                            scale = 2.0
+                        } completion: {
+                            Helper.values.append(2)
+                            confirmation()
+                            if Helper.values.count == 2 {
+                                continuation.resume()
+                            }
+                        }
+                    }
+            }
+        }
+        try await triggerLayoutWithWindow(expectedCount: 2) { confirmation, continuation in
+            PlatformHostingController(
+                rootView: ContentView(
+                    confirmation: confirmation,
+                    continuation: continuation
+                )
+            )
+        }
+        withKnownIssue(isIntermittent: true) {
+            #expect(Helper.values == [1, 2])
+        }
+    }
+}
