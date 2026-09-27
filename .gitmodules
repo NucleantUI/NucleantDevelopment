@@ -13,3 +13,6 @@
 [submodule "NucleantVulkan"]
 	path = NucleantVulkan
 	url = https://github.com/NucleantUI/NucleantVulkan.git
+[submodule "PyShader"]
+	path = PyShader
+	url = https://github.com/NucleantUI/PyShader
