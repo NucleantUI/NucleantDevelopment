@@ -1,0 +1,15 @@
+[submodule "NucleantApplication"]
+	path = NucleantApplication
+	url = https://github.com/NucleantUI/NucleantApplication.git
+[submodule "NucleantSkia"]
+	path = NucleantSkia
+	url = https://github.com/NucleantUI/NucleantSkia.git
+[submodule "NucleantThorVG"]
+	path = NucleantThorVG
+	url = https://github.com/NucleantUI/NucleantThorVG.git
+[submodule "NucleantUI"]
+	path = NucleantUI
+	url = https://github.com/NucleantUI/NucleantSwiftUI.git
+[submodule "NucleantVulkan"]
+	path = NucleantVulkan
+	url = https://github.com/NucleantUI/NucleantVulkan.git
