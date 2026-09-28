@@ -16,3 +16,6 @@
 [submodule "PyShader"]
 	path = PyShader
 	url = https://github.com/NucleantUI/PyShader
+[submodule "NucleantCEF"]
+	path = NucleantCEF
+	url = https://github.com/NucleantUI/NucleantCEF
