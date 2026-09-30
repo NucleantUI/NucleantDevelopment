@@ -77,6 +77,77 @@ value types and are handled entirely by the rule above (generics/parameter
 packs, `AnyView` at a real boundary); raw pointers are never how a view
 gets erased.
 
+## NucleantUI: a data model that changes is an `@Observable` class
+
+App state that is mutated over time — a session, a document, a list being
+edited, anything the user works on — is a `@MainActor @Observable final
+class`, changed through its own methods. Not a struct held in `@State` and
+replaced or mutated wholesale through a `@Binding`.
+
+- The view that owns the model holds it in `@State`; views below take it as
+  a plain `let` (or `@Bindable` when they need a `Binding` into one of its
+  properties). Each view then rebuilds only for the properties it read.
+- Structs are for the small values *inside* a model — an entry, a record, an
+  input (`Card`, `Track`, a `Grade` enum) — and for view inputs.
+- A view's own transient UI state (is this flipped, how far is it dragged)
+  stays in that view's `@State`; it is not model data.
+
+This applies to examples and demos as much as to the framework: they are the
+code people copy. It is for new code and code you are already changing — not
+a reason to go back and convert existing examples that don't follow it,
+unless asked.
+
+## NucleantUI: platform capabilities are concrete cross-platform types; platform code lives under the hood
+
+NucleantUI, and every example and demo built on it, targets macOS, iOS,
+Linux and Android (see the platform products in `NucleantUI/Package.swift`),
+plus whatever gets added later. A file that only compiles on Apple platforms
+is broken, whether it's framework code or an example.
+
+Anything that needs the OS — loading a font, loading/decoding an audio file,
+playing audio, decoding an image, MIDI, file pickers, and so on — is a
+**concrete framework type with one API on every platform** (a font loader,
+an audio file loader, an audio player, …). Callers use that type and never
+see the platform. Under the hood, the type is specific per platform:
+CoreText/AVFoundation/AudioToolbox on macOS/iOS, the native equivalent on
+Linux and Android (e.g. audio: PipeWire/PulseAudio/ALSA on Linux,
+AAudio/Oboe on Android; fonts: fontconfig/FreeType on Linux, the system font
+dirs on Android).
+
+- Examples, demos and views never import an Apple-only framework
+  (`AVFoundation`, `AudioToolbox`, `CoreAudio`, `CoreMIDI`, `CoreText`,
+  `CoreGraphics`, `ImageIO`, `AppKit`, `UIKit`, `Metal`, …) and never
+  contain `#if os(...)`/`#if canImport(...)` to reach one. If an example
+  needs a capability the framework doesn't have yet, build the
+  cross-platform type in the framework first, then use it — don't wire
+  AVFoundation straight into a sampler or metronome.
+- Structure it the way `NucleantApplication/Sources/NucleantApplication/`
+  does: one shared file declares the type or protocol and the API every
+  platform provides (`NucleantApplication.swift`), and **each platform
+  gets its own file** — `Foo+MacOS.swift`, `Foo+iOS.swift`,
+  `Foo+Linux.swift`, `Foo+Android.swift` — wrapped whole in its
+  `#if os(...)`, importing that platform's frameworks and adding the
+  matching extension. When the implementation needs its own type per
+  platform, each platform file defines it under the same name (as each
+  `App+*.swift` defines its own generic `AppDelegate<App>`), so only one
+  is in scope per build and the shared code refers to it without any
+  `#if`. Use protocol + generics to tie them together, not existentials.
+- `#if` goes at the top of those platform files, not sprinkled through
+  shared code, and never through view bodies or examples. Guarding alone,
+  without a type that hides it, is not enough.
+- Every platform gets its file. Before writing the Apple ones, decide what
+  Linux and Android do: a real native backend, a portable implementation
+  shared by all, or — only if neither is practical right now — a platform
+  file that compiles and fails visibly (a thrown "unsupported on this
+  platform" error, not a silent no-op or a missing file). State which you
+  picked and why.
+- The public API is designed from what all platforms can do, not shaped
+  around one platform's framework types — no `AVAudioPCMBuffer`, `CTFont`,
+  `CGImage` etc. in its signatures.
+- Foundation is available everywhere (swift-corelibs-foundation), but not
+  every Foundation API behaves the same off Darwin — check before relying
+  on something Darwin-specific in it.
+
 ## NucleantUI / NucleantThorVG: mutate an existing ThorVG paint before rebuilding it
 
 Confirmed against the ThorVG wrapper (`NucleantThorVG/Sources/NucleantThorVG/`):
