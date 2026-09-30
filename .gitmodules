@@ -19,3 +19,6 @@
 [submodule "NucleantCEF"]
 	path = NucleantCEF
 	url = https://github.com/NucleantUI/NucleantCEF
+[submodule "NucleantMonaco"]
+	path = NucleantMonaco
+	url = https://github.com/NucleantUI/NucleantMonaco
