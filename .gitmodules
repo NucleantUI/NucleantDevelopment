@@ -22,3 +22,6 @@
 [submodule "NucleantMonaco"]
 	path = NucleantMonaco
 	url = https://github.com/NucleantUI/NucleantMonaco
+[submodule "SpirvCore"]
+	path = SpirvCore
+	url = https://github.com/NucleantUI/SpirvCore.git
