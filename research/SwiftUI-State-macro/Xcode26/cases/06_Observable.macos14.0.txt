@@ -1,0 +1,95 @@
+// 06_Observable, target x86_64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe12CounterModel10ObservablefMm_.swift
+------------------------------
+@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
+
+internal nonisolated func access<$s5Probe12CounterModel10ObservablefMm_6MemberfMu_>(
+  keyPath: KeyPath<CounterModel, $s5Probe12CounterModel10ObservablefMm_6MemberfMu_>
+) {
+  _$observationRegistrar.access(self, keyPath: keyPath)
+}
+
+internal nonisolated func withMutation<$s5Probe12CounterModel10ObservablefMm_6MemberfMu0_, $s5Probe12CounterModel10ObservablefMm_14MutationResultfMu_>(
+  keyPath: KeyPath<CounterModel, $s5Probe12CounterModel10ObservablefMm_6MemberfMu0_>,
+  _ mutation: () throws -> $s5Probe12CounterModel10ObservablefMm_14MutationResultfMu_
+) rethrows -> $s5Probe12CounterModel10ObservablefMm_14MutationResultfMu_ {
+  try _$observationRegistrar.withMutation(of: self, keyPath: keyPath, mutation)
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe12CounterModel10ObservablefMm_6MemberfMu1_>(_ lhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu1_, _ rhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu1_) -> Bool {
+    true
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe12CounterModel10ObservablefMm_6MemberfMu2_: Equatable>(_ lhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu2_, _ rhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu2_) -> Bool {
+    lhs != rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe12CounterModel10ObservablefMm_6MemberfMu3_: AnyObject>(_ lhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu3_, _ rhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu3_) -> Bool {
+    lhs !== rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe12CounterModel10ObservablefMm_6MemberfMu4_: Equatable & AnyObject>(_ lhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu4_, _ rhs: $s5Probe12CounterModel10ObservablefMm_6MemberfMu4_) -> Bool {
+    lhs != rhs
+}
+------------------------------
+@__swiftmacro_5Probe12CounterModelC5count10ObservablefMr_.swift
+------------------------------
+@ObservationTracked
+------------------------------
+@__swiftmacro_5Probe12CounterModelC5count18ObservationTrackedfMp_.swift
+------------------------------
+@ObservationIgnored
+private  var _count  = 0
+------------------------------
+@__swiftmacro_5Probe12CounterModelC4init10ObservablefMr0_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe12CounterModelC4init10ObservablefMr1_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe12CounterModel10ObservablefMe_.swift
+------------------------------
+@available(macOS 14.0, iOS 17.0, *) extension CounterModel: nonisolated Observation.Observable {
+}
+------------------------------
+@__swiftmacro_5Probe12CounterModelC5count18ObservationTrackedfMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _count)
+    init(initialValue) {
+      _count = initialValue
+    }
+    get {
+      access(keyPath: \.count)
+      return _count
+    }
+    set {
+      guard shouldNotifyObservers(_count, newValue) else {
+        _count = newValue
+        return
+      }
+      withMutation(keyPath: \.count) {
+        _count = newValue
+      }
+    }
+    _modify {
+      access(keyPath: \.count)
+      _$observationRegistrar.willSet(self, keyPath: \.count)
+      defer {
+          _$observationRegistrar.didSet(self, keyPath: \.count)
+      }
+      yield &_count
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12CounterModelC6_count33_7937B1C73258F3EA9B1621C0F28F5E56LL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe12CounterModelC22_$observationRegistrar33_7937B1C73258F3EA9B1621C0F28F5E56LL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------

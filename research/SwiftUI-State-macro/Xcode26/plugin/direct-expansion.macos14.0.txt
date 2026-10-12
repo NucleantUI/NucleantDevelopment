@@ -1,0 +1,412 @@
+// PluginDirect/StateMacroDirect.swift, target x86_64-apple-macos14.0
+
+@__swiftmacro_16StateMacroDirect5Model10ObservablefMm_.swift
+------------------------------
+@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
+
+internal nonisolated func access<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu_>(
+  keyPath: KeyPath<Model, $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu_>
+) {
+  _$observationRegistrar.access(self, keyPath: keyPath)
+}
+
+internal nonisolated func withMutation<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu0_, $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_>(
+  keyPath: KeyPath<Model, $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu0_>,
+  _ mutation: () throws -> $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_
+) rethrows -> $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_ {
+  try _$observationRegistrar.withMutation(of: self, keyPath: keyPath, mutation)
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_) -> Bool {
+    true
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_: Equatable>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_) -> Bool {
+    lhs != rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_: AnyObject>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_) -> Bool {
+    lhs !== rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_: Equatable & AnyObject>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_) -> Bool {
+    lhs != rhs
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n10ObservablefMr_.swift
+------------------------------
+@ObservationTracked
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n18ObservationTrackedfMp_.swift
+------------------------------
+@ObservationIgnored
+private  var _n  = 0
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n18ObservationTrackedfMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _n)
+    init(initialValue) {
+      _n = initialValue
+    }
+    get {
+      access(keyPath: \.n)
+      return _n
+    }
+    set {
+      guard shouldNotifyObservers(_n, newValue) else {
+        _n = newValue
+        return
+      }
+      withMutation(keyPath: \.n) {
+        _n = newValue
+      }
+    }
+    _modify {
+      access(keyPath: \.n)
+      _$observationRegistrar.willSet(self, keyPath: \.n)
+      defer {
+          _$observationRegistrar.didSet(self, keyPath: \.n)
+      }
+      yield &_n
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC2_n33_BC8FD2814E3EF0912D9B2A3919AA0AECLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_16StateMacroDirect5Model10ObservablefMe_.swift
+------------------------------
+@available(macOS 14.0, iOS 17.0, *) extension Model: nonisolated Observation.Observable {
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC22_$observationRegistrar33_BC8FD2814E3EF0912D9B2A3919AA0AECLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private let __count = SwiftUICore.State._makeStorage_v0({
+        0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage
+private var _count = SwiftUICore.State(initialValue: 0)
+
+@SwiftUICore._StateProjectedValue
+private var $count = SwiftUICore.State(initialValue: 0).projectedValue
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV7noValue33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private var _noValue: SwiftUICore.State<String>
+
+private var $noValue: SwiftUICore.Binding<String> {
+    _noValue.projectedValue
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private let __optional = SwiftUICore.State._makeStorage_v0(({
+            nil
+        }) as () -> Int?)
+
+@SwiftUICore._StatePropertyWrapperStorage
+private var _optional = SwiftUICore.State<Int?>(initialValue: nil)
+
+@SwiftUICore._StateProjectedValue
+private var $optional = SwiftUICore.State<Int?>(initialValue: nil).projectedValue
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private let __model = SwiftUICore.State._makeStorage_v0({
+        Model()
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage
+private var _model = SwiftUICore.State(initialValue: Model())
+
+@SwiftUICore._StateProjectedValue
+private var $model = SwiftUICore.State(initialValue: Model()).projectedValue
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV11publicValue0cA0fMp_.swift
+------------------------------
+private var _publicValue = SwiftUICore.State(initialValue: 1)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+public var $publicValue = SwiftUICore.State(initialValue: 1).projectedValue
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    get {
+        __count.wrappedValue
+    }
+    nonmutating set {
+        __count.wrappedValue = newValue
+    }
+}
+------------------------------
+macro expansion @DirectState:1:35: error: generic parameter 'Value' could not be inferred
+`- PluginDirect/StateMacroDirect.swift:20:39: note: expanded code originates here
+18 | @available(macOS 14.0, iOS 17.0, *)
+19 | struct DirectView: View {
+20 |     @DirectState private var count = 0
+   |     |- note: in expansion of macro 'DirectState' on property 'count' here
+   |     `- note: in expansion of macro 'DirectState' on property 'count' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __count = SwiftUICore.State._makeStorage_v0({
+   |  |                                   |- error: generic parameter 'Value' could not be inferred
+   |  |                                   `- note: explicitly specify the generic arguments to fix this issue
+   |2 |         0
+   |3 |     })
+   +--------------------------------------------------------------------
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+
+macro expansion @DirectState:1:41: error: type 'State<Value>' has no member '_makeStorage_v0'
+`- PluginDirect/StateMacroDirect.swift:20:39: note: expanded code originates here
+18 | @available(macOS 14.0, iOS 17.0, *)
+19 | struct DirectView: View {
+20 |     @DirectState private var count = 0
+   |     `- note: in expansion of macro 'DirectState' on property 'count' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __count = SwiftUICore.State._makeStorage_v0({
+   |  |                                         `- error: type 'State<Value>' has no member '_makeStorage_v0'
+   |2 |         0
+   |3 |     })
+   +--------------------------------------------------------------------
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+
+macro expansion @DirectState:5:14: error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:20:39: note: expanded code originates here
+18 | @available(macOS 14.0, iOS 17.0, *)
+19 | struct DirectView: View {
+20 |     @DirectState private var count = 0
+   |     `- note: in expansion of macro 'DirectState' on property 'count' here
+   +--- macro expansion @DirectState -----------------------------------
+   |3 |     })
+   |4 | 
+   |5 | @SwiftUICore._StatePropertyWrapperStorage
+   |  |              `- error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+   |6 | private var _count = SwiftUICore.State(initialValue: 0)
+   |7 | 
+   +--------------------------------------------------------------------
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+
+@__swiftmacro_16StateMacroDirect0C4ViewV7noValue33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _noValue)
+    init(initialValue) {
+        _noValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _noValue.wrappedValue
+    }
+    nonmutating set {
+        _noValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    get {
+        __optional.wrappedValue
+    }
+    nonmutating set {
+        __optional.wrappedValue = newValue
+    }
+}
+------------------------------
+macro expansion @DirectState:8:14: error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:20:39: note: expanded code originates here
+18 | @available(macOS 14.0, iOS 17.0, *)
+19 | struct DirectView: View {
+20 |     @DirectState private var count = 0
+   |     `- note: in expansion of macro 'DirectState' on property 'count' here
+   +--- macro expansion @DirectState -----------------------------------
+   |6 | private var _count = SwiftUICore.State(initialValue: 0)
+   |7 | 
+   |8 | @SwiftUICore._StateProjectedValue
+   |  |              `- error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+   |9 | private var $count = SwiftUICore.State(initialValue: 0).projectedValue
+   +--------------------------------------------------------------------
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+
+macro expansion @DirectState:1:38: error: generic parameter 'Value' could not be inferred
+`- PluginDirect/StateMacroDirect.swift:22:44: note: expanded code originates here
+20 |     @DirectState private var count = 0
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+   |     |- note: in expansion of macro 'DirectState' on property 'optional' here
+   |     `- note: in expansion of macro 'DirectState' on property 'optional' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __optional = SwiftUICore.State._makeStorage_v0(({
+   |  |                                      |- error: generic parameter 'Value' could not be inferred
+   |  |                                      `- note: explicitly specify the generic arguments to fix this issue
+   |2 |             nil
+   |3 |         }) as () -> Int?)
+   +--------------------------------------------------------------------
+23 |     @DirectState private var model = Model()
+24 |     @DirectState public var publicValue = 1
+
+macro expansion @DirectState:1:44: error: type 'State<Value>' has no member '_makeStorage_v0'
+`- PluginDirect/StateMacroDirect.swift:22:44: note: expanded code originates here
+20 |     @DirectState private var count = 0
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+   |     `- note: in expansion of macro 'DirectState' on property 'optional' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __optional = SwiftUICore.State._makeStorage_v0(({
+   |  |                                            `- error: type 'State<Value>' has no member '_makeStorage_v0'
+   |2 |             nil
+   |3 |         }) as () -> Int?)
+   +--------------------------------------------------------------------
+23 |     @DirectState private var model = Model()
+24 |     @DirectState public var publicValue = 1
+
+macro expansion @DirectState:5:14: error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:22:44: note: expanded code originates here
+20 |     @DirectState private var count = 0
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+   |     `- note: in expansion of macro 'DirectState' on property 'optional' here
+   +--- macro expansion @DirectState -----------------------------------
+   |3 |         }) as () -> Int?)
+   |4 | 
+   |5 | @SwiftUICore._StatePropertyWrapperStorage
+   |  |              `- error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+   |6 | private var _optional = SwiftUICore.State<Int?>(initialValue: nil)
+   |7 | 
+   +--------------------------------------------------------------------
+23 |     @DirectState private var model = Model()
+24 |     @DirectState public var publicValue = 1
+
+@__swiftmacro_16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    get {
+        __model.wrappedValue
+    }
+    nonmutating set {
+        __model.wrappedValue = newValue
+    }
+}
+------------------------------
+macro expansion @DirectState:8:14: error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:22:44: note: expanded code originates here
+20 |     @DirectState private var count = 0
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+   |     `- note: in expansion of macro 'DirectState' on property 'optional' here
+   +--- macro expansion @DirectState -----------------------------------
+   |6 | private var _optional = SwiftUICore.State<Int?>(initialValue: nil)
+   |7 | 
+   |8 | @SwiftUICore._StateProjectedValue
+   |  |              `- error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+   |9 | private var $optional = SwiftUICore.State<Int?>(initialValue: nil).projectedValue
+   +--------------------------------------------------------------------
+23 |     @DirectState private var model = Model()
+24 |     @DirectState public var publicValue = 1
+
+macro expansion @DirectState:1:35: error: generic parameter 'Value' could not be inferred
+`- PluginDirect/StateMacroDirect.swift:23:45: note: expanded code originates here
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+23 |     @DirectState private var model = Model()
+   |     |- note: in expansion of macro 'DirectState' on property 'model' here
+   |     `- note: in expansion of macro 'DirectState' on property 'model' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __model = SwiftUICore.State._makeStorage_v0({
+   |  |                                   |- error: generic parameter 'Value' could not be inferred
+   |  |                                   `- note: explicitly specify the generic arguments to fix this issue
+   |2 |         Model()
+   |3 |     })
+   +--------------------------------------------------------------------
+24 |     @DirectState public var publicValue = 1
+25 | 
+
+macro expansion @DirectState:1:41: error: type 'State<Value>' has no member '_makeStorage_v0'
+`- PluginDirect/StateMacroDirect.swift:23:45: note: expanded code originates here
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+23 |     @DirectState private var model = Model()
+   |     `- note: in expansion of macro 'DirectState' on property 'model' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private let __model = SwiftUICore.State._makeStorage_v0({
+   |  |                                         `- error: type 'State<Value>' has no member '_makeStorage_v0'
+   |2 |         Model()
+   |3 |     })
+   +--------------------------------------------------------------------
+24 |     @DirectState public var publicValue = 1
+25 | 
+
+macro expansion @DirectState:5:14: error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:23:45: note: expanded code originates here
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+23 |     @DirectState private var model = Model()
+   |     `- note: in expansion of macro 'DirectState' on property 'model' here
+   +--- macro expansion @DirectState -----------------------------------
+   |3 |     })
+   |4 | 
+   |5 | @SwiftUICore._StatePropertyWrapperStorage
+   |  |              `- error: no type named '_StatePropertyWrapperStorage' in module 'SwiftUICore'
+   |6 | private var _model = SwiftUICore.State(initialValue: Model())
+   |7 | 
+   +--------------------------------------------------------------------
+24 |     @DirectState public var publicValue = 1
+25 | 
+
+@__swiftmacro_16StateMacroDirect0C4ViewV11publicValue0cA0fMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _publicValue)
+    init(initialValue) {
+        _publicValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _publicValue.wrappedValue
+    }
+    nonmutating set {
+        _publicValue.wrappedValue = newValue
+    }
+}
+------------------------------
+macro expansion @DirectState:8:14: error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:23:45: note: expanded code originates here
+21 |     @DirectState private var noValue: String
+22 |     @DirectState private var optional: Int?
+23 |     @DirectState private var model = Model()
+   |     `- note: in expansion of macro 'DirectState' on property 'model' here
+   +--- macro expansion @DirectState -----------------------------------
+   |6 | private var _model = SwiftUICore.State(initialValue: Model())
+   |7 | 
+   |8 | @SwiftUICore._StateProjectedValue
+   |  |              `- error: no type named '_StateProjectedValue' in module 'SwiftUICore'
+   |9 | private var $model = SwiftUICore.State(initialValue: Model()).projectedValue
+   +--------------------------------------------------------------------
+24 |     @DirectState public var publicValue = 1
+25 | 
+
+macro expansion @DirectState:3:14: error: no type named '_PropertyWrapperProjectedValue' in module 'SwiftUICore'
+`- PluginDirect/StateMacroDirect.swift:24:44: note: expanded code originates here
+22 |     @DirectState private var optional: Int?
+23 |     @DirectState private var model = Model()
+24 |     @DirectState public var publicValue = 1
+   |     `- note: in expansion of macro 'DirectState' on property 'publicValue' here
+   +--- macro expansion @DirectState -----------------------------------
+   |1 | private var _publicValue = SwiftUICore.State(initialValue: 1)
+   |2 | 
+   |3 | @SwiftUICore._PropertyWrapperProjectedValue
+   |  |              `- error: no type named '_PropertyWrapperProjectedValue' in module 'SwiftUICore'
+   |4 | public var $publicValue = SwiftUICore.State(initialValue: 1).projectedValue
+   +--------------------------------------------------------------------
+25 | 
+26 |     init() {
+exit 1

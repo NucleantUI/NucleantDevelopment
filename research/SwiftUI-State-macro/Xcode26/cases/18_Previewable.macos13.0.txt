@@ -1,0 +1,38 @@
+// 18_Previewable, target x86_64-apple-macos13.0, exit 1
+
+@__swiftmacro_5Probe0025_18_Previewableswift_jqFBgfMX11_0_33_1C191371E124A1C9DB05B58BC96E3001Ll7PreviewfMf_.swift
+------------------------------
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, visionOS 1.0, watchOS 10.0, *)
+struct $s5Probe0025_18_Previewableswift_jqFBgfMX11_0_33_1C191371E124A1C9DB05B58BC96E3001Ll7PreviewfMf_15PreviewRegistryfMu_: DeveloperToolsSupport.PreviewRegistry {
+    static var fileID: String {
+        "Probe/18_Previewable.swift"
+    }
+    static var line: Int {
+        12
+    }
+    static var column: Int {
+        1
+    }
+
+    static func makePreview() throws -> DeveloperToolsSupport.Preview {
+        DeveloperToolsSupport.Preview {
+            struct __P_Previewable_Transform_Wrapper: SwiftUI.View {
+                @State var value = 3
+
+                var body: some SwiftUI.View {
+                    Bound(value: $value)
+                }
+            }
+            return __P_Previewable_Transform_Wrapper()
+        }
+    }
+}
+------------------------------
+Cases/18_Previewable.swift:13:6: error: 'Previewable()' is only available in macOS 14.0 or newer
+11 | 
+12 | #Preview {
+13 |     @Previewable @State var value = 3
+   |      |- error: 'Previewable()' is only available in macOS 14.0 or newer
+   |      `- note: add 'if #available' version check
+14 |     Bound(value: $value)
+15 | }

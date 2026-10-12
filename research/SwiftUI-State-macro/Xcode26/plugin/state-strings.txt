@@ -1,0 +1,26 @@
+ = SwiftUICore.LazyState(initialValue: { initialValue })
+ = SwiftUICore.LazyState(initialValue: { initialValue }))
+ = SwiftUICore.State(initialValue: initialValue)
+(initialValue: _
+(initialValue: { 
+({ initialValue }))
+.wrappedValue
+.wrappedValue = newValue
+.wrappedValue)
+@LazyState must be private.
+@SwiftUICore._StateProjectedValue
+@SwiftUICore._StatePropertyWrapperStorage
+@storageRestrictions(initializes: 
+State
+StateMacro
+StateProjectedValueMacro
+StatePropertyWrapperStorageMacro
+SwiftUICore.State
+SwiftUICore.State._makeStorage
+SwiftUIMacros/StateMacro.swift
+Using @LazyState in function scope is unsupported.
+Using @State in function scope is unsupported, and will always return the default value when read.
+init(initialValue) {
+lazyStateInFunction
+lazyStateMustBePrivate
+stateInFunction

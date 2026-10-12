@@ -1,0 +1,6 @@
+13623:public struct AnimationState<Value> where Value : SwiftUICore.VectorArithmetic {
+15653:@frozen @propertyWrapper public struct State<Value> : SwiftUICore.DynamicProperty {
+15675:extension SwiftUICore.State : Swift.Sendable where Value : Swift.Sendable {
+15682:extension SwiftUICore.State where Value : Swift.ExpressibleByNilLiteral {
+15693:  public var state: SwiftUICore.AnimationState<Value>
+15698:  public func withState<T>(_ state: SwiftUICore.AnimationState<T>) -> SwiftUICore.AnimationContext<T> where T : SwiftUICore.VectorArithmetic

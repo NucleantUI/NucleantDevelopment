@@ -1,0 +1,87 @@
+// 07_Optional, target x86_64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe6Detail10ObservablefMm_.swift
+------------------------------
+@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
+
+internal nonisolated func access<$s5Probe6Detail10ObservablefMm_6MemberfMu_>(
+  keyPath: KeyPath<Detail, $s5Probe6Detail10ObservablefMm_6MemberfMu_>
+) {
+  _$observationRegistrar.access(self, keyPath: keyPath)
+}
+
+internal nonisolated func withMutation<$s5Probe6Detail10ObservablefMm_6MemberfMu0_, $s5Probe6Detail10ObservablefMm_14MutationResultfMu_>(
+  keyPath: KeyPath<Detail, $s5Probe6Detail10ObservablefMm_6MemberfMu0_>,
+  _ mutation: () throws -> $s5Probe6Detail10ObservablefMm_14MutationResultfMu_
+) rethrows -> $s5Probe6Detail10ObservablefMm_14MutationResultfMu_ {
+  try _$observationRegistrar.withMutation(of: self, keyPath: keyPath, mutation)
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe6Detail10ObservablefMm_6MemberfMu1_>(_ lhs: $s5Probe6Detail10ObservablefMm_6MemberfMu1_, _ rhs: $s5Probe6Detail10ObservablefMm_6MemberfMu1_) -> Bool {
+    true
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe6Detail10ObservablefMm_6MemberfMu2_: Equatable>(_ lhs: $s5Probe6Detail10ObservablefMm_6MemberfMu2_, _ rhs: $s5Probe6Detail10ObservablefMm_6MemberfMu2_) -> Bool {
+    lhs != rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe6Detail10ObservablefMm_6MemberfMu3_: AnyObject>(_ lhs: $s5Probe6Detail10ObservablefMm_6MemberfMu3_, _ rhs: $s5Probe6Detail10ObservablefMm_6MemberfMu3_) -> Bool {
+    lhs !== rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe6Detail10ObservablefMm_6MemberfMu4_: Equatable & AnyObject>(_ lhs: $s5Probe6Detail10ObservablefMm_6MemberfMu4_, _ rhs: $s5Probe6Detail10ObservablefMm_6MemberfMu4_) -> Bool {
+    lhs != rhs
+}
+------------------------------
+@__swiftmacro_5Probe6DetailC4name10ObservablefMr_.swift
+------------------------------
+@ObservationTracked
+------------------------------
+@__swiftmacro_5Probe6DetailC4name18ObservationTrackedfMp_.swift
+------------------------------
+@ObservationIgnored
+private  var _name  = ""
+------------------------------
+@__swiftmacro_5Probe6DetailC4name18ObservationTrackedfMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _name)
+    init(initialValue) {
+      _name = initialValue
+    }
+    get {
+      access(keyPath: \.name)
+      return _name
+    }
+    set {
+      guard shouldNotifyObservers(_name, newValue) else {
+        _name = newValue
+        return
+      }
+      withMutation(keyPath: \.name) {
+        _name = newValue
+      }
+    }
+    _modify {
+      access(keyPath: \.name)
+      _$observationRegistrar.willSet(self, keyPath: \.name)
+      defer {
+          _$observationRegistrar.didSet(self, keyPath: \.name)
+      }
+      yield &_name
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6DetailC5_name33_1C911C741E9050F80F27F6CDD0AAB38DLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe6Detail10ObservablefMe_.swift
+------------------------------
+@available(macOS 14.0, iOS 17.0, *) extension Detail: nonisolated Observation.Observable {
+}
+------------------------------
+@__swiftmacro_5Probe6DetailC22_$observationRegistrar33_1C911C741E9050F80F27F6CDD0AAB38DLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------

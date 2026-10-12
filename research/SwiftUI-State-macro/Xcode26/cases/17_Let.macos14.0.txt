@@ -1,0 +1,9 @@
+// 17_Let, target x86_64-apple-macos14.0, exit 1
+
+Cases/17_Let.swift:5:5: error: property wrapper can only be applied to a 'var'
+ 3 | 
+ 4 | struct LetView: View {
+ 5 |     @State let constant = 0
+   |     `- error: property wrapper can only be applied to a 'var'
+ 6 | 
+ 7 |     var body: some View {

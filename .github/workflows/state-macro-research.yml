@@ -1,0 +1,62 @@
+# Runs the SwiftUI @State probe (research/SwiftUI-State-macro/Probe) with the
+# newest Xcode GitHub offers and commits what it dumped to
+# research/SwiftUI-State-macro/Xcode<major>/, so it can be pulled and read on
+# machines that can't run that Xcode.
+name: SwiftUI @State macro research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - research/SwiftUI-State-macro/Probe/**
+      - .github/workflows/state-macro-research.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: state-macro-research
+  cancel-in-progress: true
+
+jobs:
+  dump:
+    # arm64, Xcode 27 is the image default (preview image).
+    runs-on: xcode-27
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        id: xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+          major="$(xcodebuild -version | head -1 | awk '{print $2}' | cut -d. -f1)"
+          echo "major=$major" >> "$GITHUB_OUTPUT"
+          echo "version=$(xcodebuild -version | head -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Run the probe
+        run: research/SwiftUI-State-macro/Probe/run.sh "$GITHUB_WORKSPACE/research/SwiftUI-State-macro/Xcode${{ steps.xcode.outputs.major }}"
+
+      - name: Show the summary
+        run: cat "research/SwiftUI-State-macro/Xcode${{ steps.xcode.outputs.major }}/SUMMARY.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the dump
+        env:
+          DUMP: research/SwiftUI-State-macro/Xcode${{ steps.xcode.outputs.major }}
+          VERSION: ${{ steps.xcode.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DUMP"
+          if git diff --cached --quiet; then
+            echo "Dump unchanged."
+            exit 0
+          fi
+          git commit -m "Update @State macro dump ($VERSION)"
+          for attempt in 1 2 3; do
+            git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && exit 0
+            sleep 5
+          done
+          exit 1
