@@ -1,0 +1,92 @@
+// 03_UnderscoreInit, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe7CounterV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMp_.swift
+------------------------------
+private var __count = SwiftUICore.State._makeStorage({
+        0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU3Q291bnRlclY1Y291bnQzM181RjEwOEMzOThBRkVFM0VEREI5QkRCNTU5Q0VGQjgxOUxMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _count: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 0)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $count = SwiftUICore.State(initialValue: 0).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMCB9KQ==")
+private static var $s5Probe7CounterV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 0))
+------------------------------
+@__swiftmacro_5Probe7CounterV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __count.wrappedValue
+    }
+    nonmutating set {
+        __count.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7CounterV6_count33_5F108C398AFEE3EDDB9BDB559CEFB819LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __count)
+    init(initialValue) {
+        if initialValue == nil {
+            __count = Self.$s5Probe7CounterV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __count = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __count.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __count = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7CounterV6$count33_5F108C398AFEE3EDDB9BDB559CEFB819LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __count.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7CounterV09$s5Probe7B80V5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMp_20_initialStoredValue_fMu_02_5fghijK0LL013_StateInitialpQ0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                0
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe19CounterWrappedValueV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMp_.swift
+------------------------------
+private var _count: SwiftUICore.State<Int>
+
+private var $count: SwiftUICore.Binding<Int> {
+    _count.projectedValue
+}
+------------------------------
+@__swiftmacro_5Probe19CounterWrappedValueV5count33_5F108C398AFEE3EDDB9BDB559CEFB819LL5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _count)
+    init(initialValue) {
+        _count = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _count.wrappedValue
+    }
+    nonmutating set {
+        _count.wrappedValue = newValue
+    }
+}
+------------------------------

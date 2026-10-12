@@ -1,0 +1,253 @@
+// 21_ManyProperties, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe7Session10ObservablefMm_.swift
+------------------------------
+@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
+
+internal nonisolated func access<$s5Probe7Session10ObservablefMm_6MemberfMu_>(
+  keyPath: KeyPath<Session, $s5Probe7Session10ObservablefMm_6MemberfMu_>
+) {
+  _$observationRegistrar.access(self, keyPath: keyPath)
+}
+
+internal nonisolated func withMutation<$s5Probe7Session10ObservablefMm_6MemberfMu0_, $s5Probe7Session10ObservablefMm_14MutationResultfMu_>(
+  keyPath: KeyPath<Session, $s5Probe7Session10ObservablefMm_6MemberfMu0_>,
+  _ mutation: () throws -> $s5Probe7Session10ObservablefMm_14MutationResultfMu_
+) rethrows -> $s5Probe7Session10ObservablefMm_14MutationResultfMu_ {
+  try _$observationRegistrar.withMutation(of: self, keyPath: keyPath, mutation)
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe7Session10ObservablefMm_6MemberfMu1_>(_ lhs: $s5Probe7Session10ObservablefMm_6MemberfMu1_, _ rhs: $s5Probe7Session10ObservablefMm_6MemberfMu1_) -> Bool {
+    true
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe7Session10ObservablefMm_6MemberfMu2_: Equatable>(_ lhs: $s5Probe7Session10ObservablefMm_6MemberfMu2_, _ rhs: $s5Probe7Session10ObservablefMm_6MemberfMu2_) -> Bool {
+    lhs != rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe7Session10ObservablefMm_6MemberfMu3_: AnyObject>(_ lhs: $s5Probe7Session10ObservablefMm_6MemberfMu3_, _ rhs: $s5Probe7Session10ObservablefMm_6MemberfMu3_) -> Bool {
+    lhs !== rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s5Probe7Session10ObservablefMm_6MemberfMu4_: Equatable & AnyObject>(_ lhs: $s5Probe7Session10ObservablefMm_6MemberfMu4_, _ rhs: $s5Probe7Session10ObservablefMm_6MemberfMu4_) -> Bool {
+    lhs != rhs
+}
+------------------------------
+@__swiftmacro_5Probe7SessionC4name10ObservablefMr_.swift
+------------------------------
+@ObservationTracked
+------------------------------
+@__swiftmacro_5Probe7SessionC4name18ObservationTrackedfMp_.swift
+------------------------------
+@ObservationIgnored
+private  var _name: String
+------------------------------
+@__swiftmacro_5Probe7SessionC4init10ObservablefMr0_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe7Session10ObservablefMe_.swift
+------------------------------
+@available(macOS 14.0, iOS 17.0, *) extension Session: nonisolated Observation.Observable {
+}
+------------------------------
+@__swiftmacro_5Probe7SessionC4name18ObservationTrackedfMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _name)
+    init(initialValue) {
+      _name = initialValue
+    }
+    get {
+      access(keyPath: \.name)
+      return _name
+    }
+    set {
+      guard shouldNotifyObservers(_name, newValue) else {
+        _name = newValue
+        return
+      }
+      withMutation(keyPath: \.name) {
+        _name = newValue
+      }
+    }
+    _modify {
+      access(keyPath: \.name)
+      _$observationRegistrar.willSet(self, keyPath: \.name)
+      defer {
+          _$observationRegistrar.didSet(self, keyPath: \.name)
+      }
+      yield &_name
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7SessionC5_name33_9D743621A20A6405F6D95CA06C193827LL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe7SessionC22_$observationRegistrar33_9D743621A20A6405F6D95CA06C193827LL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_5Probe6EditorV7session33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_.swift
+------------------------------
+private var _session: SwiftUICore.State<Session>
+
+private var $session: SwiftUICore.Binding<Session> {
+    _session.projectedValue
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV5draft33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_.swift
+------------------------------
+private var __draft = SwiftUICore.State._makeStorage({
+        ""
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU2RWRpdG9yVjVkcmFmdDMzXzlENzQzNjIxQTIwQTY0MDVGNkQ5NUNBMDZDMTkzODI3TEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _draft: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: "")
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $draft = SwiftUICore.State(initialValue: "").projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgIiIgfSk=")
+private static var $s5Probe6EditorV5draft33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: ""))
+------------------------------
+@__swiftmacro_5Probe6EditorV7history33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_.swift
+------------------------------
+private var __history = SwiftUICore.State._makeStorage(({
+            let value: [String] = []
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU2RWRpdG9yVjdoaXN0b3J5MzNfOUQ3NDM2MjFBMjBBNjQwNUY2RDk1Q0EwNkMxOTM4MjdMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _history: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<[String]>(initialValue: [])
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $history = SwiftUICore.State<[String]>(initialValue: []).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKCh7IGxldCB2YWx1ZTogW1N0cmluZ10gPSBbXQpyZXR1cm4gdmFsdWUgfSkp")
+private static var $s5Probe6EditorV7history33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: [String] = []
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe6EditorV7session33_9D743621A20A6405F6D95CA06C193827LL5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _session)
+    init(initialValue) {
+        _session = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _session.wrappedValue
+    }
+    nonmutating set {
+        _session.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV5draft33_9D743621A20A6405F6D95CA06C193827LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __draft.wrappedValue
+    }
+    nonmutating set {
+        __draft.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV6_draft33_9D743621A20A6405F6D95CA06C193827LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __draft)
+    init(initialValue) {
+        if initialValue == nil {
+            __draft = Self.$s5Probe6EditorV5draft33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __draft = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __draft.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __draft = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV6$draft33_9D743621A20A6405F6D95CA06C193827LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __draft.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV09$s5Probe6B80V5draft33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_02_9fghijkL0LL013_StateInitialqR0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                ""
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV7history33_9D743621A20A6405F6D95CA06C193827LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __history.wrappedValue
+    }
+    nonmutating set {
+        __history.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV8_history33_9D743621A20A6405F6D95CA06C193827LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __history)
+    init(initialValue) {
+        if initialValue == nil {
+            __history = Self.$s5Probe6EditorV7history33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __history = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __history.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __history = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV8$history33_9D743621A20A6405F6D95CA06C193827LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __history.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe6EditorV09$s5Probe6B82V7history33_9D743621A20A6405F6D95CA06C193827LL5StatefMp_20_initialStoredValue_fMu_02_9fghijkL0LL013_StateInitialqR0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(({
+                    let value: [String] = []
+                    return value
+                }))
+    }
+}
+------------------------------

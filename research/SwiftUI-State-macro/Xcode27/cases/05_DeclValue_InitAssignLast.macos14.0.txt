@@ -1,0 +1,69 @@
+// 05_DeclValue_InitAssignLast, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe8PageViewV4page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL5StatefMp_.swift
+------------------------------
+private var __page = SwiftUICore.State._makeStorage({
+        Page(title: "")
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU4UGFnZVZpZXdWNHBhZ2UzM19GM0YxQjkwQTYzQjlCREQ2MEE1NTk2RUI4MzJGNEI0Q0xMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _page: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: Page(title: ""))
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $page = SwiftUICore.State(initialValue: Page(title: "")).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgUGFnZSh0aXRsZTogIiIpIH0p")
+private static var $s5Probe8PageViewV4page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: Page(title: "")))
+------------------------------
+@__swiftmacro_5Probe8PageViewV4page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __page.wrappedValue
+    }
+    nonmutating set {
+        __page.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV5_page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __page)
+    init(initialValue) {
+        if initialValue == nil {
+            __page = Self.$s5Probe8PageViewV4page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __page = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __page.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __page = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV5$page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __page.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV09$s5Probe8bC79V4page33_F3F1B90A63B9BDD60A5596EB832F4B4CLL5StatefMp_20_initialStoredValue_fMu_01_ghijklmnoP1CLL013_StateInitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                Page(title: "")
+            })
+    }
+}
+------------------------------

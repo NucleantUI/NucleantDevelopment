@@ -1,0 +1,37 @@
+15758:@_documentation(visibility: internal) @frozen public struct LazyState<Value> : SwiftUICore::DynamicProperty {
+15763:  internal var _storage: SwiftUICore::LazyState<Value>.SwiftUICore::Storage
+15770:            to: LazyState<Value>.self
+17431:public struct AnimationState<Value> : ~Swift::Sendable where Value : SwiftUICore::VectorArithmetic {
+17444:public struct AnimationState<Value> where Value : SwiftUICore::VectorArithmetic {
+20000:@frozen @propertyWrapper public struct State<Value> : SwiftUICore::DynamicProperty {
+20026:extension SwiftUICore::State : Swift::Sendable where Value : Swift::Sendable {
+20033:extension SwiftUICore::State where Value : Swift::ExpressibleByNilLiteral {
+20038:@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State() = #externalMacro(
+20041:@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State<Value>(initialValue: Value) = #externalMacro(
+20044:@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State<Value>(wrappedValue: Value) = #externalMacro(
+20047:@attached(accessor, names: named(init), named(get), named(set)) public macro _StatePropertyWrapperStorage(initialValue: Swift::String) = #externalMacro(
+20050:@attached(accessor, names: named(init), named(get), named(set)) public macro _StatePropertyWrapperStorage() = #externalMacro(
+20053:@attached(accessor, names: named(get)) public macro _StateInitialStoredValue(_ initialValue: Swift::String) = #externalMacro(
+20056:@attached(accessor, names: named(get)) public macro _StateProjectedValue() = #externalMacro(
+20059:@freestanding(declaration, names: arbitrary) public macro _SwiftUIState<T>(_ type: T.Type, _ named: Swift::String) = #externalMacro(
+20062:extension SwiftUICore::State {
+20064:  @export(implementation) public static func _makeStorage(_ makeInitialValue: @escaping () -> Value) -> SwiftUICore::LazyState<Value> {
+20068:  @_disfavoredOverload @export(implementation) public static func _makeStorage(_ makeInitialValue: @escaping () -> Value) -> SwiftUICore::State<Value> {
+20069:        State<Value>(wrappedValue: makeInitialValue())
+20072:  @export(implementation) public static func _makeStorage(initialValue: Value) -> SwiftUICore::LazyState<Value> {
+20076:  @_disfavoredOverload @export(implementation) public static func _makeStorage(initialValue: Value) -> SwiftUICore::State<Value> {
+20077:        State<Value>(initialValue: initialValue)
+20080:extension SwiftUICore::State {
+20082:  @export(implementation) public static func _makeStorageFrozen(_ makeInitialValue: @escaping () -> Value) -> SwiftUICore::LazyState<Value> {
+20086:  @_disfavoredOverload @export(implementation) public static func _makeStorageFrozen(_ makeInitialValue: @escaping () -> Value) -> SwiftUICore::State<Value> {
+20087:        State<Value>(initialValue: makeInitialValue())
+20090:  @export(implementation) public static func _makeStorageFrozen(initialValue: Value) -> SwiftUICore::LazyState<Value> {
+20094:  @_disfavoredOverload @export(implementation) public static func _makeStorageFrozen(initialValue: Value) -> SwiftUICore::State<Value> {
+20095:        State<Value>(initialValue: initialValue)
+20100:extension SwiftUICore::State {
+20102:  @_disfavoredOverload @export(implementation) public static func _kind(_ makeInitialValue: Value) -> SwiftUICore::State<Value> {
+20103:        State<Value>(initialValue: makeInitialValue)
+20113:  public var state: SwiftUICore::AnimationState<Value>
+20118:  public func withState<T>(_ state: SwiftUICore::AnimationState<T>) -> SwiftUICore::AnimationContext<T> where T : SwiftUICore::VectorArithmetic
+20127:  public var state: SwiftUICore::AnimationState<Value>
+20132:  public func withState<T>(_ state: SwiftUICore::AnimationState<T>) -> SwiftUICore::AnimationContext<T> where T : SwiftUICore::VectorArithmetic

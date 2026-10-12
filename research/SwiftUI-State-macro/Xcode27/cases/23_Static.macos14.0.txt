@@ -1,0 +1,28 @@
+// 23_Static, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe10StaticViewV6shared5StatefMp_.swift
+------------------------------
+private static var _shared = SwiftUICore.State(initialValue: 0)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+static var $shared = SwiftUICore.State(initialValue: 0).projectedValue
+------------------------------
+@__swiftmacro_5Probe10StaticViewV6shared5StatefMa_.swift
+------------------------------
+{
+    get {
+        _shared.wrappedValue
+    }
+    set {
+        _shared.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10StaticViewV7$shared30_PropertyWrapperProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        _shared.projectedValue
+    }
+}
+------------------------------

@@ -1,0 +1,315 @@
+// 13_ComplexInitialValue, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe11ComplexViewV10fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_.swift
+------------------------------
+private var __fromStatic = SwiftUICore.State._makeStorage({
+        Defaults.make()
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMUNvbXBsZXhWaWV3VjEwZnJvbVN0YXRpYzMzX0NCQjU4NDVDMDlCNUFGNUI4MjVDRUZGRjZCNEJCREUwTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _fromStatic: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: Defaults.make())
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $fromStatic = SwiftUICore.State(initialValue: Defaults.make()).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgRGVmYXVsdHMubWFrZSgpIH0p")
+private static var $s5Probe11ComplexViewV10fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: Defaults.make()))
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV11fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_.swift
+------------------------------
+private var __fromClosure = SwiftUICore.State._makeStorage(({
+            let value: Int = {
+                    var x = 0
+                    for i in 0 ..< 10 {
+                        x += i
+                    }
+                    return x
+                }()
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMUNvbXBsZXhWaWV3VjExZnJvbUNsb3N1cmUzM19DQkI1ODQ1QzA5QjVBRjVCODI1Q0VGRkY2QjRCQkRFMExMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _fromClosure: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<Int>(initialValue: {
+                var x = 0
+                for i in 0 ..< 10 {
+                        x += i
+                    }
+                return x
+            }())
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $fromClosure = SwiftUICore.State<Int>(initialValue: {
+        var x = 0
+        for i in 0 ..< 10 {
+                x += i
+            }
+        return x
+    }()).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKCh7IGxldCB2YWx1ZTogSW50ID0gewogICAgICAgIHZhciB4ID0gMAogICAgICAgIGZvciBpIGluIDAuLjwxMCB7IHggKz0gaSB9CiAgICAgICAgcmV0dXJuIHgKICAgIH0oKQpyZXR1cm4gdmFsdWUgfSkp")
+private static var $s5Probe11ComplexViewV11fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: Int = {
+                    var x = 0
+                    for i in 0 ..< 10 {
+                        x += i
+                    }
+                    return x
+                }()
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV12fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_.swift
+------------------------------
+private var __fromSelfType = SwiftUICore.State._makeStorage({
+        ComplexView.seed
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMUNvbXBsZXhWaWV3VjEyZnJvbVNlbGZUeXBlMzNfQ0JCNTg0NUMwOUI1QUY1QjgyNUNFRkZGNkI0QkJERTBMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _fromSelfType: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: ComplexView.seed)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $fromSelfType = SwiftUICore.State(initialValue: ComplexView.seed).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgQ29tcGxleFZpZXcuc2VlZCB9KQ==")
+private static var $s5Probe11ComplexViewV12fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: ComplexView.seed))
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV8callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_.swift
+------------------------------
+private var __callback = SwiftUICore.State._makeStorage(({
+            let value: () -> Void = {
+            }
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMUNvbXBsZXhWaWV3VjhjYWxsYmFjazMzX0NCQjU4NDVDMDlCNUFGNUI4MjVDRUZGRjZCNEJCREUwTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _callback: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<() -> Void>(initialValue: {
+            })
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $callback = SwiftUICore.State<() -> Void>(initialValue: {
+    }).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKCh7IGxldCB2YWx1ZTogKCkgLT4gVm9pZCA9IHt9CnJldHVybiB2YWx1ZSB9KSk=")
+private static var $s5Probe11ComplexViewV8callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: () -> Void = {
+            }
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV10fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __fromStatic.wrappedValue
+    }
+    nonmutating set {
+        __fromStatic.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV11_fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __fromStatic)
+    init(initialValue) {
+        if initialValue == nil {
+            __fromStatic = Self.$s5Probe11ComplexViewV10fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __fromStatic = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __fromStatic.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __fromStatic = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV11fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __fromClosure.wrappedValue
+    }
+    nonmutating set {
+        __fromClosure.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV12_fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __fromClosure)
+    init(initialValue) {
+        if initialValue == nil {
+            __fromClosure = Self.$s5Probe11ComplexViewV11fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __fromClosure = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __fromClosure.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __fromClosure = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV12fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __fromSelfType.wrappedValue
+    }
+    nonmutating set {
+        __fromSelfType.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV13_fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __fromSelfType)
+    init(initialValue) {
+        if initialValue == nil {
+            __fromSelfType = Self.$s5Probe11ComplexViewV12fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __fromSelfType = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __fromSelfType.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __fromSelfType = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV8callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __callback.wrappedValue
+    }
+    nonmutating set {
+        __callback.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV9_callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __callback)
+    init(initialValue) {
+        if initialValue == nil {
+            __callback = Self.$s5Probe11ComplexViewV8callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __callback = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __callback.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __callback = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV11$fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __fromStatic.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV010$s5Probe11bC86V10fromStatic33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_01_hijklmnO0LL013_StateInitialtU0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                Defaults.make()
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV12$fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __fromClosure.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV010$s5Probe11bC87V11fromClosure33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_01_hijklmnO0LL013_StateInitialtU0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(({
+                    let value: Int = {
+                            var x = 0
+                            for i in 0 ..< 10 {
+                                x += i
+                            }
+                            return x
+                        }()
+                    return value
+                }))
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV13$fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __fromSelfType.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV010$s5Probe11bC88V12fromSelfType33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_01_ijklmnoP0LL013_StateInitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                ComplexView.seed
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV9$callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __callback.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe11ComplexViewV010$s5Probe11bC83V8callback33_CBB5845C09B5AF5B825CEFFF6B4BBDE0LL5StatefMp_20_initialStoredValue_fMu_01_ghijklmN0LL013_StateInitialsT0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(({
+                    let value: () -> Void = {
+                    }
+                    return value
+                }))
+    }
+}
+------------------------------

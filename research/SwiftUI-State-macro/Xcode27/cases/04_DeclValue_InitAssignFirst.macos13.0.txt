@@ -1,0 +1,80 @@
+// 04_DeclValue_InitAssignFirst, target arm64-apple-macos13.0, exit 1
+
+@__swiftmacro_5Probe8PageViewV4page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL5StatefMp_.swift
+------------------------------
+private var __page = SwiftUICore.State._makeStorage({
+        Page(title: "")
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU4UGFnZVZpZXdWNHBhZ2UwMzFfMEIwRjJDN0RGRjI1QUM0RjkzRUQwNUE4RkY0MTYzRzBMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _page: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: Page(title: ""))
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $page = SwiftUICore.State(initialValue: Page(title: "")).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgUGFnZSh0aXRsZTogIiIpIH0p")
+private static var $s5Probe8PageViewV4page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: Page(title: "")))
+------------------------------
+@__swiftmacro_5Probe8PageViewV4page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __page.wrappedValue
+    }
+    nonmutating set {
+        __page.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV5_page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __page)
+    init(initialValue) {
+        if initialValue == nil {
+            __page = Self.$s5Probe8PageViewV4page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __page = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __page.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __page = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV5$page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __page.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV09$s5Probe8bC80V4page031_0B0F2C7DFF25AC4F93ED05A8FF4163G0LL5StatefMp_20_initialStoredValue_fMu_02_0ghijklmnoI0LL013_StateInitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                Page(title: "")
+            })
+    }
+}
+------------------------------
+Cases/04_DeclValue_InitAssignFirst.swift:14:9: error: 'self' used before all stored properties are initialized
+ 9 | struct PageView: View {
+10 |     @State private var page = Page(title: "")
+11 |     let title: String
+   |         `- note: 'self.title' not initialized
+12 | 
+13 |     init(title: String) {
+14 |         self.page = Page(title: title)
+   |         `- error: 'self' used before all stored properties are initialized
+15 |         self.title = title
+16 |     }

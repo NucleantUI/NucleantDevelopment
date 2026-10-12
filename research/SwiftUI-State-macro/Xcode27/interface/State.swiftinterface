@@ -1,0 +1,43 @@
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@_originallyDefinedIn(module: "SwiftUI", iOS 18.0)
+@_originallyDefinedIn(module: "SwiftUI", macOS 15.0)
+@_originallyDefinedIn(module: "SwiftUI", tvOS 18.0)
+@_originallyDefinedIn(module: "SwiftUI", watchOS 11.0)
+@frozen @propertyWrapper public struct State<Value> : SwiftUICore::DynamicProperty {
+  @usableFromInline
+  internal var _value: Value
+  @usableFromInline
+  internal var _location: SwiftUICore::AnyLocation<Value>?
+  public init(wrappedValue value: Value)
+  @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+  @usableFromInline
+  internal init(wrappedValue thunk: @autoclosure @escaping () -> Value) where Value : AnyObject, Value : Observation::Observable
+  @export(implementation) public init(initialValue value: Value) {
+        _value = value
+    }
+  public var wrappedValue: Value {
+    get
+    nonmutating set
+  }
+  public var projectedValue: SwiftUICore::Binding<Value> {
+    get
+  }
+  public static func _makeProperty<V>(in buffer: inout SwiftUICore::_DynamicPropertyBuffer, container: SwiftUICore::_GraphValue<V>, fieldOffset: Swift::Int, inputs: inout SwiftUICore::_GraphInputs)
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static var _propertyStorageSize: Swift::Int? {
+    get
+  }
+}
+
+@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State() = #externalMacro(
+    module: "SwiftUIMacros", type: "StateMacro"
+)
+
+@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State<Value>(initialValue: Value) = #externalMacro(
+    module: "SwiftUIMacros", type: "StateMacro"
+)
+
+@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`), prefixed(__), prefixed(`$`)) public macro State<Value>(wrappedValue: Value) = #externalMacro(
+    module: "SwiftUIMacros", type: "StateMacro"
+)
+

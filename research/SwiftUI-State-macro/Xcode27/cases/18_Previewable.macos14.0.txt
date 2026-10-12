@@ -1,0 +1,30 @@
+// 18_Previewable, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe0025_18_Previewableswift_jqFBgfMX11_0_33_1C191371E124A1C9DB05B58BC96E3001Ll7PreviewfMf_.swift
+------------------------------
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, visionOS 1.0, watchOS 10.0, *)
+nonisolated struct $s5Probe0025_18_Previewableswift_jqFBgfMX11_0_33_1C191371E124A1C9DB05B58BC96E3001Ll7PreviewfMf_15PreviewRegistryfMu_: DeveloperToolsSupport.PreviewRegistry {
+    static var fileID: String {
+        "Probe/18_Previewable.swift"
+    }
+    static var line: Int {
+        12
+    }
+    static var column: Int {
+        1
+    }
+
+    @MainActor static func makePreview() throws -> DeveloperToolsSupport.Preview {
+        DeveloperToolsSupport.Preview {
+            struct __P_Previewable_Transform_Wrapper: SwiftUI.View {
+                @State var value = 3
+
+                var body: some SwiftUI.View {
+                    Bound(value: $value)
+                }
+            }
+            return __P_Previewable_Transform_Wrapper()
+        }
+    }
+}
+------------------------------

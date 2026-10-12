@@ -1,0 +1,59 @@
+nominal type descriptor for SwiftUIMacros.StateInitialStoredValueMacro
+nominal type descriptor for SwiftUIMacros.StateMacro
+nominal type descriptor for SwiftUIMacros.StateMacro.Message
+nominal type descriptor for SwiftUIMacros.StateProjectedValueMacro
+nominal type descriptor for SwiftUIMacros.StatePropertyWrapperStorageMacro
+nominal type descriptor for SwiftUIMacros.StateTypeMacro
+property descriptor for static SwiftUIMacros.StateMacro.domain : Swift.String
+property descriptor for static SwiftUIMacros.StatePropertyWrapperStorageMacro.domain : Swift.String
+property descriptor for SwiftUIMacros.StateMacro.Message.description : Swift.String
+protocol conformance descriptor for SwiftUIMacros.StateInitialStoredValueMacro : CompilerSwiftSyntaxMacros.AccessorMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateInitialStoredValueMacro : CompilerSwiftSyntaxMacros.AttachedMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateInitialStoredValueMacro : CompilerSwiftSyntaxMacros.Macro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro : CompilerSwiftSyntaxMacros.AccessorMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro : CompilerSwiftSyntaxMacros.AttachedMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro : CompilerSwiftSyntaxMacros.Macro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro : CompilerSwiftSyntaxMacros.PeerMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro : SwiftUIMacros.DiagnosticsDomain in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro.Message : Swift.CustomStringConvertible in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro.Message : Swift.Identifiable in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateMacro.Message : SwiftUIMacros.DiagnosticsMessage in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateProjectedValueMacro : CompilerSwiftSyntaxMacros.AccessorMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateProjectedValueMacro : CompilerSwiftSyntaxMacros.AttachedMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateProjectedValueMacro : CompilerSwiftSyntaxMacros.Macro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StatePropertyWrapperStorageMacro : CompilerSwiftSyntaxMacros.AccessorMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StatePropertyWrapperStorageMacro : CompilerSwiftSyntaxMacros.AttachedMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StatePropertyWrapperStorageMacro : CompilerSwiftSyntaxMacros.Macro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateTypeMacro : CompilerSwiftSyntaxMacros.DeclarationMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateTypeMacro : CompilerSwiftSyntaxMacros.FreestandingMacro in SwiftUIMacros
+protocol conformance descriptor for SwiftUIMacros.StateTypeMacro : CompilerSwiftSyntaxMacros.Macro in SwiftUIMacros
+protocol witness table for SwiftUIMacros.StateMacro : SwiftUIMacros.DiagnosticsDomain in SwiftUIMacros
+protocol witness table for SwiftUIMacros.StateMacro.Message : SwiftUIMacros.DiagnosticsMessage in SwiftUIMacros
+static SwiftUIMacros.StateInitialStoredValueMacro.expansion<A, B where A: CompilerSwiftSyntax.DeclSyntaxProtocol, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: CompilerSwiftSyntax.AttributeSyntax, providingAccessorsOf: A, in: B) throws -> [CompilerSwiftSyntax.AccessorDeclSyntax]
+static SwiftUIMacros.StateMacro.domain.getter : Swift.String
+static SwiftUIMacros.StateMacro.expansion<A, B where A: CompilerSwiftSyntax.DeclSyntaxProtocol, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: CompilerSwiftSyntax.AttributeSyntax, providingAccessorsOf: A, in: B) throws -> [CompilerSwiftSyntax.AccessorDeclSyntax]
+static SwiftUIMacros.StateMacro.expansion<A, B where A: CompilerSwiftSyntax.DeclSyntaxProtocol, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: CompilerSwiftSyntax.AttributeSyntax, providingPeersOf: A, in: B) throws -> [CompilerSwiftSyntax.DeclSyntax]
+static SwiftUIMacros.StateProjectedValueMacro.expansion<A, B where A: CompilerSwiftSyntax.DeclSyntaxProtocol, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: CompilerSwiftSyntax.AttributeSyntax, providingAccessorsOf: A, in: B) throws -> [CompilerSwiftSyntax.AccessorDeclSyntax]
+static SwiftUIMacros.StatePropertyWrapperStorageMacro.domain : Swift.String
+static SwiftUIMacros.StatePropertyWrapperStorageMacro.domain.getter : Swift.String
+static SwiftUIMacros.StatePropertyWrapperStorageMacro.expansion<A, B where A: CompilerSwiftSyntax.DeclSyntaxProtocol, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: CompilerSwiftSyntax.AttributeSyntax, providingAccessorsOf: A, in: B) throws -> [CompilerSwiftSyntax.AccessorDeclSyntax]
+static SwiftUIMacros.StateTypeMacro.expansion<A, B where A: CompilerSwiftSyntax.FreestandingMacroExpansionSyntax, B: CompilerSwiftSyntaxMacros.MacroExpansionContext>(of: A, in: B) throws -> [CompilerSwiftSyntax.DeclSyntax]
+SwiftUIMacros.StateInitialStoredValueMacro.init() -> SwiftUIMacros.StateInitialStoredValueMacro
+SwiftUIMacros.StateMacro.init() -> SwiftUIMacros.StateMacro
+SwiftUIMacros.StateMacro.Message.description.getter : Swift.String
+SwiftUIMacros.StateProjectedValueMacro.init() -> SwiftUIMacros.StateProjectedValueMacro
+SwiftUIMacros.StatePropertyWrapperStorageMacro.domain.unsafeMutableAddressor : Swift.String
+SwiftUIMacros.StatePropertyWrapperStorageMacro.init() -> SwiftUIMacros.StatePropertyWrapperStorageMacro
+SwiftUIMacros.StateTypeMacro.init() -> SwiftUIMacros.StateTypeMacro
+type metadata accessor for SwiftUIMacros.StateInitialStoredValueMacro
+type metadata accessor for SwiftUIMacros.StateMacro
+type metadata accessor for SwiftUIMacros.StateMacro.Message
+type metadata accessor for SwiftUIMacros.StateProjectedValueMacro
+type metadata accessor for SwiftUIMacros.StatePropertyWrapperStorageMacro
+type metadata accessor for SwiftUIMacros.StateTypeMacro
+type metadata for SwiftUIMacros.StateInitialStoredValueMacro
+type metadata for SwiftUIMacros.StateMacro
+type metadata for SwiftUIMacros.StateMacro.Message
+type metadata for SwiftUIMacros.StateProjectedValueMacro
+type metadata for SwiftUIMacros.StatePropertyWrapperStorageMacro
+type metadata for SwiftUIMacros.StateTypeMacro

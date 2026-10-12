@@ -1,0 +1,351 @@
+// PluginDirect/StateMacroDirect.swift, target arm64-apple-macos13.0
+
+@__swiftmacro_16StateMacroDirect5Model10ObservablefMm_.swift
+------------------------------
+@ObservationIgnored private let _$observationRegistrar = Observation.ObservationRegistrar()
+
+internal nonisolated func access<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu_>(
+  keyPath: KeyPath<Model, $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu_>
+) {
+  _$observationRegistrar.access(self, keyPath: keyPath)
+}
+
+internal nonisolated func withMutation<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu0_, $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_>(
+  keyPath: KeyPath<Model, $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu0_>,
+  _ mutation: () throws -> $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_
+) rethrows -> $s16StateMacroDirect5Model10ObservablefMm_14MutationResultfMu_ {
+  try _$observationRegistrar.withMutation(of: self, keyPath: keyPath, mutation)
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu1_) -> Bool {
+    true
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_: Equatable>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu2_) -> Bool {
+    lhs != rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_: AnyObject>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu3_) -> Bool {
+    lhs !== rhs
+}
+
+private nonisolated func shouldNotifyObservers<$s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_: Equatable & AnyObject>(_ lhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_, _ rhs: $s16StateMacroDirect5Model10ObservablefMm_6MemberfMu4_) -> Bool {
+    lhs != rhs
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n10ObservablefMr_.swift
+------------------------------
+@ObservationTracked
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n18ObservationTrackedfMp_.swift
+------------------------------
+@ObservationIgnored
+private  var _n  = 0
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC1n18ObservationTrackedfMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _n)
+    init(initialValue) {
+      _n = initialValue
+    }
+    get {
+      access(keyPath: \.n)
+      return _n
+    }
+    set {
+      guard shouldNotifyObservers(_n, newValue) else {
+        _n = newValue
+        return
+      }
+      withMutation(keyPath: \.n) {
+        _n = newValue
+      }
+    }
+    _modify {
+      access(keyPath: \.n)
+      _$observationRegistrar.willSet(self, keyPath: \.n)
+      defer {
+          _$observationRegistrar.didSet(self, keyPath: \.n)
+      }
+      yield &_n
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC2_n33_BC8FD2814E3EF0912D9B2A3919AA0AECLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_16StateMacroDirect5Model10ObservablefMe_.swift
+------------------------------
+@available(macOS 14.0, iOS 17.0, *) extension Model: nonisolated Observation.Observable {
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect5ModelC22_$observationRegistrar33_BC8FD2814E3EF0912D9B2A3919AA0AECLL18ObservationIgnoredfMa_.swift
+------------------------------
+
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private var __count = SwiftUICore.State._makeStorage({
+        0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHMxNlN0YXRlTWFjcm9EaXJlY3QwQzRWaWV3VjVjb3VudDMzX0JDOEZEMjgxNEUzRUYwOTEyRDlCMkEzOTE5QUEwQUVDTEwwY0EwZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _count: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 0)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $count = SwiftUICore.State(initialValue: 0).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMCB9KQ==")
+private static var $s16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 0))
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV7noValue33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private var _noValue: SwiftUICore.State<String>
+
+private var $noValue: SwiftUICore.Binding<String> {
+    _noValue.projectedValue
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private var __optional = SwiftUICore.State._makeStorage(({
+            let value: Int? = nil
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHMxNlN0YXRlTWFjcm9EaXJlY3QwQzRWaWV3VjhvcHRpb25hbDMzX0JDOEZEMjgxNEUzRUYwOTEyRDlCMkEzOTE5QUEwQUVDTEwwY0EwZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _optional: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<Int?>(initialValue: nil)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $optional = SwiftUICore.State<Int?>(initialValue: nil).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKGluaXRpYWxWYWx1ZTogeyBsZXQgeDogSW50PyA9IG5pbApyZXR1cm4geCB9KCkp")
+private static var $s16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: Int? = nil
+            return x
+        }()))
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_.swift
+------------------------------
+private var __model = SwiftUICore.State._makeStorage({
+        Model()
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHMxNlN0YXRlTWFjcm9EaXJlY3QwQzRWaWV3VjVtb2RlbDMzX0JDOEZEMjgxNEUzRUYwOTEyRDlCMkEzOTE5QUEwQUVDTEwwY0EwZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _model: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: Model())
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $model = SwiftUICore.State(initialValue: Model()).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgTW9kZWwoKSB9KQ==")
+private static var $s16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: Model()))
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV11publicValue0cA0fMp_.swift
+------------------------------
+private var _publicValue = SwiftUICore.State(initialValue: 1)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+public var $publicValue = SwiftUICore.State(initialValue: 1).projectedValue
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    get {
+        __count.wrappedValue
+    }
+    nonmutating set {
+        __count.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV6_count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A22PropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __count)
+    init(initialValue) {
+        if initialValue == nil {
+            __count = Self.$s16StateMacroDirect0C4ViewV5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_
+        } else {
+            __count = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __count.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __count = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV6$count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A14ProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __count.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV04$s16ab9Direct0C4D78V5count33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_01_ijklmnoP3AECLL01_a7InitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                0
+            })
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV7noValue33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _noValue)
+    init(initialValue) {
+        _noValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _noValue.wrappedValue
+    }
+    nonmutating set {
+        _noValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __optional)
+    init(initialValue) {
+        __optional = SwiftUICore.State._makeStorage(initialValue: initialValue)
+    }
+    get {
+        __optional.wrappedValue
+    }
+    nonmutating set {
+        __optional.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV9_optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A22PropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __optional)
+    init(initialValue) {
+        if initialValue == nil {
+            __optional = Self.$s16StateMacroDirect0C4ViewV8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_
+        } else {
+            __optional = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __optional.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __optional = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV9$optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A14ProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __optional.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV04$s16ab9Direct0C4D81V8optional33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_01_ijklmnoP3AECLL01_a7InitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(initialValue: {
+                let x: Int? = nil
+                return x
+            }())
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMa_.swift
+------------------------------
+{
+    get {
+        __model.wrappedValue
+    }
+    nonmutating set {
+        __model.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV6_model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A22PropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __model)
+    init(initialValue) {
+        if initialValue == nil {
+            __model = Self.$s16StateMacroDirect0C4ViewV5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_
+        } else {
+            __model = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __model.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __model = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV6$model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL01_A14ProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __model.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV04$s16ab9Direct0C4D78V5model33_BC8FD2814E3EF0912D9B2A3919AA0AECLL0cA0fMp_20_initialStoredValue_fMu_01_ijklmnoP3AECLL01_a7InitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                Model()
+            })
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV11publicValue0cA0fMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _publicValue)
+    init(initialValue) {
+        _publicValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _publicValue.wrappedValue
+    }
+    nonmutating set {
+        _publicValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_16StateMacroDirect0C4ViewV12$publicValue025_PropertyWrapperProjectedF0fMa_.swift
+------------------------------
+{
+    get {
+        _publicValue.projectedValue
+    }
+}
+------------------------------
+exit 0

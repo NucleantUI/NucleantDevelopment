@@ -1,0 +1,35 @@
+// 17_Let, target arm64-apple-macos14.0, exit 1
+
+@__swiftmacro_5Probe7LetViewV8constant5StatefMp_.swift
+------------------------------
+
+------------------------------
+Cases/17_Let.swift:5:5: error: '@State' can only be applied to a 'var' declaration (from macro 'State ')
+ 3 | 
+ 4 | struct LetView: View {
+ 5 |     @State let constant = 0
+   |     |- error: '@State' can only be applied to a 'var' declaration (from macro 'State ')
+   |     `- note: Replace 'let' with 'var'
+ 6 | 
+ 7 |     var body: some View {
+
+@__swiftmacro_5Probe7LetViewV8constant5StatefMa_.swift
+------------------------------
+
+------------------------------
+Cases/17_Let.swift:5:5: error: '@State' can only be applied to a 'var' declaration (from macro 'State ')
+ 3 | 
+ 4 | struct LetView: View {
+ 5 |     @State let constant = 0
+   |     |- error: '@State' can only be applied to a 'var' declaration (from macro 'State ')
+   |     `- note: Replace 'let' with 'var'
+ 6 | 
+ 7 |     var body: some View {
+
+Cases/17_Let.swift:5:16: error: expansion of macro 'State()' did not produce a non-observing accessor (such as 'get') as expected
+ 3 | 
+ 4 | struct LetView: View {
+ 5 |     @State let constant = 0
+   |                `- error: expansion of macro 'State()' did not produce a non-observing accessor (such as 'get') as expected
+ 6 | 
+ 7 |     var body: some View {

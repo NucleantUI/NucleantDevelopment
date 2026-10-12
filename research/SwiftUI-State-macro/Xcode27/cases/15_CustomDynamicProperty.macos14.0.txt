@@ -1,0 +1,69 @@
+// 15_CustomDynamicProperty, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe7ToggledV4isOn33_82B5AF633752214227256B889D3C07E0LL5StatefMp_.swift
+------------------------------
+private var __isOn = SwiftUICore.State._makeStorage({
+        false
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU3VG9nZ2xlZFY0aXNPbjMzXzgyQjVBRjYzMzc1MjIxNDIyNzI1NkI4ODlEM0MwN0UwTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _isOn: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: false)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $isOn = SwiftUICore.State(initialValue: false).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgZmFsc2UgfSk=")
+private static var $s5Probe7ToggledV4isOn33_82B5AF633752214227256B889D3C07E0LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: false))
+------------------------------
+@__swiftmacro_5Probe7ToggledV4isOn33_82B5AF633752214227256B889D3C07E0LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __isOn.wrappedValue
+    }
+    nonmutating set {
+        __isOn.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7ToggledV5_isOn33_82B5AF633752214227256B889D3C07E0LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __isOn)
+    init(initialValue) {
+        if initialValue == nil {
+            __isOn = Self.$s5Probe7ToggledV4isOn33_82B5AF633752214227256B889D3C07E0LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __isOn = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __isOn.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __isOn = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7ToggledV5$isOn33_82B5AF633752214227256B889D3C07E0LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __isOn.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe7ToggledV09$s5Probe7B79V4isOn33_82B5AF633752214227256B889D3C07E0LL5StatefMp_20_initialStoredValue_fMu_03_82ghijkL0LL013_StateInitialqR0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                false
+            })
+    }
+}
+------------------------------

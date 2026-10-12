@@ -1,0 +1,12 @@
+Xcode 27.0
+Build version 27A266a
+
+swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)
+Target: arm64-apple-macosx27.0.0
+
+ProductName:		macOS
+ProductVersion:		27.0.1
+BuildVersion:		26A434
+arch: arm64
+developer dir: /Applications/Xcode.app/Contents/Developer
+sdk: /Applications/Xcode_27.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk

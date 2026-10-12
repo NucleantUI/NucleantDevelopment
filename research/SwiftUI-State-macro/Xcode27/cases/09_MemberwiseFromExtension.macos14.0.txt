@@ -1,0 +1,25 @@
+// 09_MemberwiseFromExtension, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe8PageViewV4page33_037BF7E9A229DA12F57EA28631D103EELL5StatefMp_.swift
+------------------------------
+private var _page: SwiftUICore.State<Page>
+
+private var $page: SwiftUICore.Binding<Page> {
+    _page.projectedValue
+}
+------------------------------
+@__swiftmacro_5Probe8PageViewV4page33_037BF7E9A229DA12F57EA28631D103EELL5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _page)
+    init(initialValue) {
+        _page = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _page.wrappedValue
+    }
+    nonmutating set {
+        _page.wrappedValue = newValue
+    }
+}
+------------------------------

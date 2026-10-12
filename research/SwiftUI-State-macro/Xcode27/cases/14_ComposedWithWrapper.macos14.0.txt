@@ -1,0 +1,102 @@
+// 14_ComposedWithWrapper, target arm64-apple-macos14.0, exit 1
+
+@__swiftmacro_5Probe12ComposedViewV5value33_AC05EDE0E497EF60944D72B01CD882A2LL5StatefMp_.swift
+------------------------------
+private var __value = SwiftUICore.State._makeStorage({
+        5
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkNvbXBvc2VkVmlld1Y1dmFsdWUzM19BQzA1RURFMEU0OTdFRjYwOTQ0RDcyQjAxQ0Q4ODJBMkxMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _value: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 5)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $value = SwiftUICore.State(initialValue: 5).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgNSB9KQ==")
+private static var $s5Probe12ComposedViewV5value33_AC05EDE0E497EF60944D72B01CD882A2LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 5))
+------------------------------
+@__swiftmacro_5Probe12ComposedViewV6_value33_AC05EDE0E497EF60944D72B01CD882A2LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __value)
+    init(initialValue) {
+        if initialValue == nil {
+            __value = Self.$s5Probe12ComposedViewV5value33_AC05EDE0E497EF60944D72B01CD882A2LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __value = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __value.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __value = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12ComposedViewV5value33_AC05EDE0E497EF60944D72B01CD882A2LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __value.wrappedValue
+    }
+    nonmutating set {
+        __value.wrappedValue = newValue
+    }
+}
+------------------------------
+Cases/14_ComposedWithWrapper.swift:15:12: error: property wrapper cannot be applied to a computed property
+13 | 
+14 | struct ComposedView: View {
+15 |     @State @Clamped private var value = 5
+   |            `- error: property wrapper cannot be applied to a computed property
+16 | 
+17 |     var body: some View {
+
+Cases/14_ComposedWithWrapper.swift:15:5: error: property wrapper cannot be applied to a computed property
+13 | 
+14 | struct ComposedView: View {
+15 |     @State @Clamped private var value = 5
+   |     `- error: property wrapper cannot be applied to a computed property
+16 | 
+17 |     var body: some View {
+
+@__swiftmacro_5Probe12ComposedViewV6$value33_AC05EDE0E497EF60944D72B01CD882A2LL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __value.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12ComposedViewV010$s5Probe12bC80V5value33_AC05EDE0E497EF60944D72B01CD882A2LL5StatefMp_20_initialStoredValue_fMu_01_ghijklmN0LL013_StateInitialsT0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                5
+            })
+    }
+}
+------------------------------
+macro expansion @State:6:13: error: invalid redeclaration of synthesized property '_value'
+`- Cases/14_ComposedWithWrapper.swift:15:42: note: expanded code originates here
+13 | 
+14 | struct ComposedView: View {
+15 |     @State @Clamped private var value = 5
+   |     |                           `- note: '_value' synthesized for property wrapper backing storage
+   |     `- note: in expansion of macro 'State' on property 'value' here
+   +--- macro expansion @State -----------------------------------------
+   | 4 | 
+   | 5 | @SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkNvbXBvc2VkVmlld1Y1dmFsdWUzM19BQzA1RURFMEU0OTdFRjYwOTQ0RDcyQjAxQ0Q4ODJBMkxMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+   | 6 | private var _value: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+   |   |             `- error: invalid redeclaration of synthesized property '_value'
+   | 7 |         SwiftUICore.State(initialValue: 5)
+   | 8 |     })
+   +--------------------------------------------------------------------
+16 | 
+17 |     var body: some View {

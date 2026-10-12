@@ -1,0 +1,29 @@
+    if initialValue == nil {
+ = initialValue
+: SwiftUICore.State<
+: SwiftUICore.ViewModelState_v1<
+.wrappedValue = newValue
+.wrappedValue)
+(initialValue: { let x: 
+(initialValue: initialValue.wrappedValue)
+(initialValue: initialValue)
+(initialValue: newValue.wrappedValue)
+@State in classes has no effect.
+@storageRestrictions(initializes: 
+@storageRestrictions(initializes: _
+@SwiftUICore._StateInitialStoredValue("
+@SwiftUICore._StateProjectedValue
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "
+<_>! = SwiftUICore._stateNil(of: { 
+init(initialValue) {
+stateInClass
+stateInFunction
+StateInitialStoredValueMacro
+StateMacro
+StateProjectedValueMacro
+StatePropertyWrapperStorageMacro
+StateTypeMacro
+SwiftUICore.State
+SwiftUICore.State._makeStorage
+SwiftUIMacros/StateMacro.swift
+Using @State in function scope is unsupported, and will always return the default value when read.

@@ -1,0 +1,8 @@
+// target arm64-apple-macos27.0
+
+start: classDecl=0 classInitAssign=0 structDecl=0 childBodies=0 parentBodies=0
+after constructing Child 5x outside a host: classDecl=0 classInitAssign=5 structDecl=0 childBodies=0 parentBodies=0
+after hosting: classDecl=1 classInitAssign=6 structDecl=1 childBodies=1 parentBodies=1
+after 5 parent re-renders (same identity): classDecl=1 classInitAssign=11 structDecl=1 childBodies=6 parentBodies=6
+after identity change: classDecl=2 classInitAssign=12 structDecl=2 childBodies=7 parentBodies=7
+exit 0

@@ -1,0 +1,490 @@
+// 10_Generic, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe8ListViewV5items33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __items = SwiftUICore.State._makeStorage(({
+            let value: [Item] = []
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU4TGlzdFZpZXdWNWl0ZW1zMzNfNTE4QjIxQTBBN0YxQjlGQTAzMTk0MjczODkwN0QyRkZMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _items: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<[Item]>(initialValue: [])
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $items = SwiftUICore.State<[Item]>(initialValue: []).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKCh7IGxldCB2YWx1ZTogW0l0ZW1dID0gW10KcmV0dXJuIHZhbHVlIH0pKQ==")
+private static var $s5Probe8ListViewV5items33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: [Item] = []
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe8ListViewV8selected33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __selected = SwiftUICore.State._makeStorage(({
+            let value: Item? = nil
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmU4TGlzdFZpZXdWOHNlbGVjdGVkMzNfNTE4QjIxQTBBN0YxQjlGQTAzMTk0MjczODkwN0QyRkZMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _selected: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<Item?>(initialValue: nil)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $selected = SwiftUICore.State<Item?>(initialValue: nil).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKGluaXRpYWxWYWx1ZTogeyBsZXQgeDogSXRlbT8gPSBuaWwKcmV0dXJuIHggfSgpKQ==")
+private static var $s5Probe8ListViewV8selected33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: Item? = nil
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe8ListViewV5items33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __items.wrappedValue
+    }
+    nonmutating set {
+        __items.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV6_items33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __items)
+    init(initialValue) {
+        if initialValue == nil {
+            __items = Self.$s5Probe8ListViewV5items33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __items = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __items.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __items = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV8selected33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __selected)
+    init(initialValue) {
+        __selected = SwiftUICore.State._makeStorage(initialValue: initialValue)
+    }
+    get {
+        __selected.wrappedValue
+    }
+    nonmutating set {
+        __selected.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV9_selected33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __selected)
+    init(initialValue) {
+        if initialValue == nil {
+            __selected = Self.$s5Probe8ListViewV8selected33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __selected = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __selected.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __selected = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV6$items33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __items.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV09$s5Probe8bC80V5items33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(({
+                    let value: [Item] = []
+                    return value
+                }))
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV9$selected33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __selected.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe8ListViewV09$s5Probe8bC83V8selected33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(initialValue: {
+                let x: Item? = nil
+                return x
+            }())
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV4ints33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __ints = SwiftUICore.State._makeStorage({
+        [1, 2, 3]
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkluZmVycmVkVmlld1Y0aW50czMzXzUxOEIyMUEwQTdGMUI5RkEwMzE5NDI3Mzg5MDdEMkZGTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _ints: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: [1, 2, 3])
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $ints = SwiftUICore.State(initialValue: [1, 2, 3]).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgWzEsIDIsIDNdIH0p")
+private static var $s5Probe12InferredViewV4ints33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: [1, 2, 3]))
+------------------------------
+@__swiftmacro_5Probe12InferredViewV6double33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __double = SwiftUICore.State._makeStorage({
+        1.0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkluZmVycmVkVmlld1Y2ZG91YmxlMzNfNTE4QjIxQTBBN0YxQjlGQTAzMTk0MjczODkwN0QyRkZMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _double: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 1.0)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $double = SwiftUICore.State(initialValue: 1.0).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMS4wIH0p")
+private static var $s5Probe12InferredViewV6double33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 1.0))
+------------------------------
+@__swiftmacro_5Probe12InferredViewV4dict33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __dict = SwiftUICore.State._makeStorage({
+        ["a": 1]
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkluZmVycmVkVmlld1Y0ZGljdDMzXzUxOEIyMUEwQTdGMUI5RkEwMzE5NDI3Mzg5MDdEMkZGTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _dict: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: ["a": 1])
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $dict = SwiftUICore.State(initialValue: ["a": 1]).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgWyJhIjogMV0gfSk=")
+private static var $s5Probe12InferredViewV4dict33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: ["a": 1]))
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5range33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __range = SwiftUICore.State._makeStorage({
+        0 ..< 10
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkluZmVycmVkVmlld1Y1cmFuZ2UzM181MThCMjFBMEE3RjFCOUZBMDMxOTQyNzM4OTA3RDJGRkxMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _range: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 0 ..< 10)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $range = SwiftUICore.State(initialValue: 0 ..< 10).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMC4uPDEwIH0p")
+private static var $s5Probe12InferredViewV5range33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 0 ..< 10))
+------------------------------
+@__swiftmacro_5Probe12InferredViewV15explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_.swift
+------------------------------
+private var __explicitGeneric = SwiftUICore.State._makeStorage(({
+            let value: [String] = makeDefault()
+            return value
+        }))
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMkluZmVycmVkVmlld1YxNWV4cGxpY2l0R2VuZXJpYzMzXzUxOEIyMUEwQTdGMUI5RkEwMzE5NDI3Mzg5MDdEMkZGTEw1U3RhdGVmTXBfMjBfaW5pdGlhbFN0b3JlZFZhbHVlX2ZNdV8=")
+private var _explicitGeneric: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State<[String]>(initialValue: makeDefault())
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $explicitGeneric = SwiftUICore.State<[String]>(initialValue: makeDefault()).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKCh7IGxldCB2YWx1ZTogW1N0cmluZ10gPSBtYWtlRGVmYXVsdCgpCnJldHVybiB2YWx1ZSB9KSk=")
+private static var $s5Probe12InferredViewV15explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: {
+            let x: [String] = makeDefault()
+            return x
+        }()))
+------------------------------
+@__swiftmacro_5Probe12InferredViewV4ints33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __ints.wrappedValue
+    }
+    nonmutating set {
+        __ints.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5_ints33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __ints)
+    init(initialValue) {
+        if initialValue == nil {
+            __ints = Self.$s5Probe12InferredViewV4ints33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __ints = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __ints.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __ints = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV6double33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __double.wrappedValue
+    }
+    nonmutating set {
+        __double.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV7_double33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __double)
+    init(initialValue) {
+        if initialValue == nil {
+            __double = Self.$s5Probe12InferredViewV6double33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __double = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __double.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __double = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV4dict33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __dict.wrappedValue
+    }
+    nonmutating set {
+        __dict.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5_dict33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __dict)
+    init(initialValue) {
+        if initialValue == nil {
+            __dict = Self.$s5Probe12InferredViewV4dict33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __dict = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __dict.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __dict = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5range33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __range.wrappedValue
+    }
+    nonmutating set {
+        __range.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV6_range33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __range)
+    init(initialValue) {
+        if initialValue == nil {
+            __range = Self.$s5Probe12InferredViewV5range33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __range = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __range.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __range = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV15explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __explicitGeneric.wrappedValue
+    }
+    nonmutating set {
+        __explicitGeneric.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV16_explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __explicitGeneric)
+    init(initialValue) {
+        if initialValue == nil {
+            __explicitGeneric = Self.$s5Probe12InferredViewV15explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __explicitGeneric = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __explicitGeneric.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __explicitGeneric = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5$ints33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __ints.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV010$s5Probe12bC79V4ints33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                [1, 2, 3]
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV7$double33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __double.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV010$s5Probe12bC81V6double33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                1.0
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV5$dict33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __dict.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV010$s5Probe12bC79V4dict33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                ["a": 1]
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV6$range33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __range.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV010$s5Probe12bC80V5range33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518ghijklM2FFLL013_StateInitialrS0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                0 ..< 10
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV16$explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL20_StateProjectedValuefMa_.swift
+------------------------------
+{
+    get {
+        __explicitGeneric.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe12InferredViewV010$s5Probe12bC91V15explicitGeneric33_518B21A0A7F1B9FA031942738907D2FFLL5StatefMp_20_initialStoredValue_fMu_04_518hijklmN2FFLL013_StateInitialsT0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage(({
+                    let value: [String] = makeDefault()
+                    return value
+                }))
+    }
+}
+------------------------------

@@ -1,0 +1,226 @@
+// 12_AccessLevels, target arm64-apple-macos14.0, exit 0
+
+@__swiftmacro_5Probe10AccessViewV11publicValue5StatefMp_.swift
+------------------------------
+private var _publicValue = SwiftUICore.State(initialValue: 0)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+public var $publicValue = SwiftUICore.State(initialValue: 0).projectedValue
+------------------------------
+@__swiftmacro_5Probe10AccessViewV13internalValue5StatefMp_.swift
+------------------------------
+private var _internalValue = SwiftUICore.State(initialValue: 0)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+var $internalValue = SwiftUICore.State(initialValue: 0).projectedValue
+------------------------------
+@__swiftmacro_5Probe10AccessViewV16fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_.swift
+------------------------------
+private var __fileprivateValue = SwiftUICore.State._makeStorage({
+        0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMEFjY2Vzc1ZpZXdWMTZmaWxlcHJpdmF0ZVZhbHVlMzNfRTYwOEI5MDk4NzQxQzU0QkY1N0UzRTZCNjVEMUQwMjJMTDVTdGF0ZWZNcF8yMF9pbml0aWFsU3RvcmVkVmFsdWVfZk11Xw==")
+private var _fileprivateValue: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 0)
+    })
+
+@SwiftUICore._StateProjectedValue
+fileprivate var $fileprivateValue = SwiftUICore.State(initialValue: 0).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMCB9KQ==")
+private static var $s5Probe10AccessViewV16fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 0))
+------------------------------
+@__swiftmacro_5Probe10AccessViewV12privateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_.swift
+------------------------------
+private var __privateValue = SwiftUICore.State._makeStorage({
+        0
+    })
+
+@SwiftUICore._StatePropertyWrapperStorage(initialValue: "JHM1UHJvYmUxMEFjY2Vzc1ZpZXdWMTJwcml2YXRlVmFsdWUzM19FNjA4QjkwOTg3NDFDNTRCRjU3RTNFNkI2NUQxRDAyMkxMNVN0YXRlZk1wXzIwX2luaXRpYWxTdG9yZWRWYWx1ZV9mTXVf")
+private var _privateValue: SwiftUICore.State<_>! = SwiftUICore._stateNil(of: {
+        SwiftUICore.State(initialValue: 0)
+    })
+
+@SwiftUICore._StateProjectedValue
+private var $privateValue = SwiftUICore.State(initialValue: 0).projectedValue
+
+@SwiftUICore._StateInitialStoredValue("U3dpZnRVSUNvcmUuU3RhdGUuX21ha2VTdG9yYWdlKHsgMCB9KQ==")
+private static var $s5Probe10AccessViewV12privateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_ = (SwiftUICore.State._makeStorage(initialValue: 0))
+------------------------------
+@__swiftmacro_5Probe10AccessViewV15privateSetValue5StatefMp_.swift
+------------------------------
+private var _privateSetValue = SwiftUICore.State(initialValue: 0)
+
+@SwiftUICore._PropertyWrapperProjectedValue
+var $privateSetValue = SwiftUICore.State(initialValue: 0).projectedValue
+------------------------------
+@__swiftmacro_5Probe10AccessViewV11publicValue5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _publicValue)
+    init(initialValue) {
+        _publicValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _publicValue.wrappedValue
+    }
+    nonmutating set {
+        _publicValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV12$publicValue025_PropertyWrapperProjectedE0fMa_.swift
+------------------------------
+{
+    get {
+        _publicValue.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV13internalValue5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _internalValue)
+    init(initialValue) {
+        _internalValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _internalValue.wrappedValue
+    }
+    nonmutating set {
+        _internalValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV14$internalValue025_PropertyWrapperProjectedE0fMa_.swift
+------------------------------
+{
+    get {
+        _internalValue.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV16fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __fileprivateValue.wrappedValue
+    }
+    nonmutating set {
+        __fileprivateValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV17_fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __fileprivateValue)
+    init(initialValue) {
+        if initialValue == nil {
+            __fileprivateValue = Self.$s5Probe10AccessViewV16fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __fileprivateValue = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __fileprivateValue.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __fileprivateValue = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV17$fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL015_StateProjectedE0fMa_.swift
+------------------------------
+{
+    get {
+        __fileprivateValue.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV010$s5Probe10bC92V16fileprivateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_01_hijklmnoP0LL013_StateInitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                0
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV12privateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMa_.swift
+------------------------------
+{
+    get {
+        __privateValue.wrappedValue
+    }
+    nonmutating set {
+        __privateValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV13_privateValue33_E608B9098741C54BF57E3E6B65D1D022LL28_StatePropertyWrapperStoragefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: __privateValue)
+    init(initialValue) {
+        if initialValue == nil {
+            __privateValue = Self.$s5Probe10AccessViewV12privateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_
+        } else {
+            __privateValue = SwiftUICore.State._makeStorage(initialValue: initialValue.wrappedValue)
+        }
+    }
+    get {
+        SwiftUICore.State(initialValue: __privateValue.wrappedValue)
+    }
+    set {
+        if newValue != nil {
+            __privateValue = SwiftUICore.State._makeStorage(initialValue: newValue.wrappedValue)
+        }
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV13$privateValue33_E608B9098741C54BF57E3E6B65D1D022LL015_StateProjectedE0fMa_.swift
+------------------------------
+{
+    get {
+        __privateValue.projectedValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV010$s5Probe10bC88V12privateValue33_E608B9098741C54BF57E3E6B65D1D022LL5StatefMp_20_initialStoredValue_fMu_01_hijklmnoP0LL013_StateInitialuV0fMa_.swift
+------------------------------
+{
+    get {
+        SwiftUICore.State._makeStorage({
+                0
+            })
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV15privateSetValue5StatefMa_.swift
+------------------------------
+{
+    @storageRestrictions(initializes: _privateSetValue)
+    init(initialValue) {
+        _privateSetValue = SwiftUICore.State(initialValue: initialValue)
+    }
+    get {
+        _privateSetValue.wrappedValue
+    }
+    nonmutating set {
+        _privateSetValue.wrappedValue = newValue
+    }
+}
+------------------------------
+@__swiftmacro_5Probe10AccessViewV16$privateSetValue025_PropertyWrapperProjectedF0fMa_.swift
+------------------------------
+{
+    get {
+        _privateSetValue.projectedValue
+    }
+}
+------------------------------
