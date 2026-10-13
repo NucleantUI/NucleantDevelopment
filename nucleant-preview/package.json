@@ -1,0 +1,155 @@
+{
+  "name": "nucleant-preview",
+  "displayName": "Nucleant Preview",
+  "description": "Live WebAssembly builds of a NucleantUI app beside the editor: the app itself, or its @Preview functions as tabs. Rebuilds on save.",
+  "version": "0.0.1",
+  "publisher": "nucleant",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:swift"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "nucleantPreview.runApp",
+        "title": "Run App to the Side",
+        "category": "Nucleant",
+        "icon": "$(play)"
+      },
+      {
+        "command": "nucleantPreview.showPreviews",
+        "title": "Show Previews to the Side",
+        "category": "Nucleant",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "nucleantPreview.openInBrowser",
+        "title": "Open Preview in Browser",
+        "category": "Nucleant",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "nucleantPreview.rebuild",
+        "title": "Rebuild Preview",
+        "category": "Nucleant",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "nucleantPreview.chooseProduct",
+        "title": "Choose Preview Product…",
+        "category": "Nucleant"
+      },
+      {
+        "command": "nucleantPreview.stop",
+        "title": "Stop Preview",
+        "category": "Nucleant"
+      },
+      {
+        "command": "nucleantPreview.showLog",
+        "title": "Show Build Log",
+        "category": "Nucleant",
+        "icon": "$(output)"
+      },
+      {
+        "command": "nucleantPreview.lock",
+        "title": "Lock Previews to This File",
+        "category": "Nucleant",
+        "icon": "$(unlock)"
+      },
+      {
+        "command": "nucleantPreview.unlock",
+        "title": "Unlock Previews (Follow the Editor)",
+        "category": "Nucleant",
+        "icon": "$(lock)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "nucleantPreview.runApp",
+          "when": "resourceLangId == swift",
+          "group": "navigation@1"
+        },
+        {
+          "command": "nucleantPreview.showPreviews",
+          "when": "resourceLangId == swift",
+          "group": "navigation@2"
+        },
+        {
+          "command": "nucleantPreview.lock",
+          "when": "(resourceLangId == swift || activeWebviewPanelId == 'nucleantPreview') && nucleantPreview.previews && !nucleantPreview.locked",
+          "group": "navigation@3"
+        },
+        {
+          "command": "nucleantPreview.unlock",
+          "when": "(resourceLangId == swift || activeWebviewPanelId == 'nucleantPreview') && nucleantPreview.previews && nucleantPreview.locked",
+          "group": "navigation@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "nucleantPreview.openInBrowser",
+          "when": "nucleantPreview.running"
+        },
+        {
+          "command": "nucleantPreview.rebuild",
+          "when": "nucleantPreview.running"
+        },
+        {
+          "command": "nucleantPreview.stop",
+          "when": "nucleantPreview.running"
+        },
+        {
+          "command": "nucleantPreview.showLog",
+          "when": "nucleantPreview.running"
+        },
+        {
+          "command": "nucleantPreview.lock",
+          "when": "nucleantPreview.previews && !nucleantPreview.locked"
+        },
+        {
+          "command": "nucleantPreview.unlock",
+          "when": "nucleantPreview.previews && nucleantPreview.locked"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Nucleant Preview",
+      "properties": {
+        "nucleantPreview.buildScript": {
+          "type": "string",
+          "default": "",
+          "description": "Path to NucleantApplication's scripts/build_wasm_app.py. Empty: found by walking up from the package to a sibling NucleantApplication checkout."
+        },
+        "nucleantPreview.python": {
+          "type": "string",
+          "default": "python3",
+          "description": "Python used to run the build script."
+        },
+        "nucleantPreview.release": {
+          "type": "boolean",
+          "default": false,
+          "description": "Build with --release (slower to build, faster to run)."
+        },
+        "nucleantPreview.debounceMs": {
+          "type": "number",
+          "default": 400,
+          "description": "Wait this long after the last change before rebuilding."
+        },
+        "nucleantPreview.buildOnSaveOnly": {
+          "type": "boolean",
+          "default": true,
+          "description": "Rebuild when a Swift file is saved. Off: rebuild on any change on disk (git checkout, external editors)."
+        }
+      }
+    }
+  }
+}
